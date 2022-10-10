@@ -16,9 +16,10 @@
     </head>
     <body>
 
+    <!-- NAVBAR -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="https://warungbelajar.com">Warung Belajar</a>
+                <a class="navbar-brand" href="/home">Cafeloka</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -71,14 +72,13 @@
                             </span>
                         </h1>
                         <p class="lead my-4">
-                            We focus on teaching our students the fundamentals of the latest and greatest
-                            technologies to prepare them for their first dev role
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis cupiditate aperiam placeat voluptate enim recusandae temporibus, tempora debitis, minus et dicta accusantium nihil maiores doloremque necessitatibus nam impedit, architecto sunt!
                         </p>
                         <button
-                            class="btn btn-primary btn-lg"
+                            class="btn btn-primary btn-lg mb-4"
                             data-bs-toggle="modal"
                             data-bs-target="#enroll">
-                            Start The Enrollment
+                            Hmm...
                         </button>
                     </div>
                     <img class="img-fluid w-50 d-none d-sm-block" src="img/showcase.svg" alt=""/>
@@ -153,7 +153,7 @@
             </div>
         </section>
 
-        <!-- Learn Sections -->
+        <!-- Learn Sections
         <section id="learn" class="p-5">
             <div class="container">
                 <div class="row align-items-center justify-content-between">
@@ -178,7 +178,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <script
             src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js"
