@@ -26,9 +26,46 @@
         }
     </style>
   </head>
-  <body class="text-center">
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/home">Cafeloka</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExampleDefault"
+                    aria-controls="navbarsExampleDefault"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <main class="form-signin">
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url(); ?>/logout">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('about') ?>">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('contact') ?>">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <main class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-5">Login</h1>
+        Silahkan Login ke dalam Cafeloka
+        <hr />
         <?php if (!empty(session()->getFlashdata('error'))) : ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <?php echo session()->getFlashdata('error'); ?>
@@ -36,14 +73,23 @@
         <?php endif; ?>
         <form method="post" action="<?= base_url(); ?>/login/process">
             <?= csrf_field(); ?>
-            <h1 class="h3 mb-3 fw-normal">Login</h1>
-            <input type="text" name="username" id="username" placeholder="Username" class="form-control" required autofocus>
-            <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
-            <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
-            <p class="mt-5 mb-3 text-muted">&copy; Warung Belajar</p>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username" class="form-control" required autofocus>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a href="/register" class="btn btn-primary mr-3">Belum Punya Akun?</a>
+            </div>
         </form>
-    </main>
+        <hr />
 
+    </div>
+</main>
 
 
 </body>
