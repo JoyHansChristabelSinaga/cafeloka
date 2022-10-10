@@ -26,63 +26,25 @@
         }
     </style>
   </head>
-  <body>
-  <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/home">Cafeloka</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <body class="text-center">
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">Register</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-  <main class="flex-shrink-0">
-    <div class="container">
-        <h1 class="mt-5">Login Form</h1>
-        Silahkan Login ke akun anda
-        <hr />
+    <main class="form-signin">
         <?php if (!empty(session()->getFlashdata('error'))) : ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <h4>Periksa Entrian Form</h4>
-                </hr />
                 <?php echo session()->getFlashdata('error'); ?>
             </div>
         <?php endif; ?>
-        <form method="post" action="<?= base_url(); ?>/register/process">
+        <form method="post" action="<?= base_url(); ?>/login/process">
             <?= csrf_field(); ?>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
-            </div>
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Login</button>
-            </div>
+            <h1 class="h3 mb-3 fw-normal">Login</h1>
+            <input type="text" name="username" id="username" placeholder="Username" class="form-control" required autofocus>
+            <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+            <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
+            <p class="mt-5 mb-3 text-muted">&copy; Warung Belajar</p>
         </form>
-        <hr />
+    </main>
 
-    </div>
-</main>
 
-    <footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-        <span class="text-muted">Cafeloka dulu~ .</span>
-    </div>
-</footer>
 
 </body>
 </html>
