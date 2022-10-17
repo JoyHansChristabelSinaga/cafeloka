@@ -4,6 +4,8 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('vw_home');
+		return view('layout/header')
+		. view('vw_home')
+		. view('layout/footer');
 	}
 }
