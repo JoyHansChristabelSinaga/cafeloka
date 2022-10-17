@@ -49,7 +49,7 @@ $routes->get('/edit/(:num)', 'DataController::edit/$1');
 $routes->post('/update/(:num)', 'DataController::update/$1');
 $routes->delete('/delete/(:any)', 'DataController::delete/$1');
 $routes->get('/index', 'Pages::index');
-$routes->get('(:any)', 'Pages::view/$1');
+$routes->get('/data', 'DataController::view');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -17,23 +17,25 @@ class DataController extends BaseController
         ];
 
         return view('layout/header')
-        . view('vw_home', $_data)
-        . view('layout/footer');
+            . view('vw_home', $_data)
+            . view('layout/footer');
     }
 
-    public function create(){
+    public function create()
+    {
         return view('layout/header')
-        . view('data/create')
-        . view('layout/footer');
+            . view('data/create')
+            . view('layout/footer');
     }
 
-    public function store(){
+    public function store()
+    {
 
-        if(!$this->validate([
+        if (!$this->validate([
             'nama_cafe' => 'required',
             'keterangan' => 'required',
-        ])){
-            return redirect()-> to('/create');
+        ])) {
+            return redirect()->to('/create');
         }
         $dataModel = new Data();
         $_data = [
@@ -44,6 +46,20 @@ class DataController extends BaseController
         $dataModel->save($_data);
 
         return redirect()->to('/vw_home');
+    }
+
+    public function view()
+    {
+        $dataModel = new Data();
+        $data = $dataModel->findAll();
+
+        $_data = [
+            'data' => $data
+        ];
+
+        return view('layout/header')
+            . view('Data/data', $_data)
+            . view('layout/footer');
     }
 
     // public function delete($id){

@@ -10,7 +10,7 @@ class Data extends Model
     protected $table            = 'data';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['nama_cafe','keterangan'];
+    protected $allowedFields    = ['nama_cafe', 'keterangan'];
 
     // Dates
     protected $useTimestamps = false;

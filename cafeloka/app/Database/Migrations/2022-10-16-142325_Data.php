@@ -19,7 +19,7 @@ class Data extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '10',
             ],
-            'keteragan' => [
+            'keterangan' => [
                 'type' => 'TEXT',
             ],
             'created_at' => [
