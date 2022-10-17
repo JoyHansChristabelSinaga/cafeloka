@@ -62,41 +62,41 @@ class DataController extends BaseController
             . view('layout/footer');
     }
 
-    // public function delete($id){
-    //     $dataModel = new Data();
-    //     $dataModel->delete($id);
+    public function delete($id){
+        $dataModel = new Data();
+        $dataModel->delete($id);
 
-    //     return redirect()->to('data');
-    // }
+        return redirect()->to('data');
+    }
 
-    // public function edit($id){
-    //     $dataModel = new Data();
-    //     $data = $dataModel->find($id);
+    public function edit($id){
+        $dataModel = new Data();
+        $data = $dataModel->find($id);
 
-    //     $_data = [
-    //         'data' => $data
-    //     ];
+        $_data = [
+            'data' => $data
+        ];
 
-    //     return view('templat/header')
-    //     . view('data/edit', $_data)
-    //     . view('templat/footer');
-    // }
+        return view('layout/header')
+        . view('data/edit', $_data)
+        . view('layout/footer');
+    }
 
-    // public function update($id){
+    public function update($id){
 
-    //     if(!$this->validate([
-    //         'nama_cafe' => 'required',
-    //         'keterangan' => 'required',
-    //     ])){
-    //         return redirect()-> to('/edit/'.$id);
-    //     }
-    //     $dataModel = new Data();
-    //     $_data = [
-    //         'nama_cafe' => $this->request->getVar('nama_cafe'),
-    //         'keterangan' => $this->request->getVar('keterangan')
-    //     ]; 
+        if(!$this->validate([
+            'nama_cafe' => 'required',
+            'keterangan' => 'required',
+        ])){
+            return redirect()-> to('data/edit/'.$id);
+        }
+        $dataModel = new Data();
+        $_data = [
+            'nama_cafe' => $this->request->getVar('nama_cafe'),
+            'keterangan' => $this->request->getVar('keterangan')
+        ]; 
 
-    //     $dataModel->update($id, $_data);
-    //     return redirect()->to('/data');
-    // }
+        $dataModel->update($id, $_data);
+        return redirect()->to('/data');
+    }
 }

@@ -15,14 +15,14 @@
       <div class="container" mt-5 mb-3>
         <div class="row">
           <div class="col-6">
-            <form action="/update/<?= $admin['id'] ?>" method="POST">
+            <form action="/update/<?= $data['id'] ?>" method="POST">
               <div class="form-group">
                 <label for="nama">Nama_Cafe</label>
-                <input type="text" name="nama_cafe" class="form-control" id="nama_cafe" value="<?= $admin['nama_cafe'] ?>">
+                <input type="text" name="nama_cafe" class="form-control" id="nama_cafe" value="<?= $data['nama_cafe'] ?>">
               </div>
               <div class="form-group">
                 <label for="nohp">Keterangan</label>
-                <input type="text" name="keterangan" class="form-control" id="keterangan" value="<?= $admin['keterangan'] ?>">
+                <input type="text" name="keterangan" class="form-control" id="keterangan" value="<?= $data['keterangan'] ?>">
               </div>
           </div>
         </div>
