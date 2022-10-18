@@ -9,7 +9,7 @@
     <title>Cafeloka</title>
 </head>
 <div>
-    <a href="/create" type="button" class="btn btn-primary mb-3 ms-2">Tambah Data</a>
+    <a href="/create" type="button" class="btn btn-primary m-4">Tambah Data</a>
 </div>
 <table class="table">
     <thead>
@@ -17,6 +17,7 @@
             <th scope="col">#</th>
             <th scope="col">Nama</th>
             <th scope="col">Keterangan</th>
+            <th scope="col">Aksi</th>
         </tr>
     </thead>
     <tbody>

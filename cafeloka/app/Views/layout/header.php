@@ -19,9 +19,6 @@
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/data/data">Create</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="/data">Data</a>
         </li>
         <li class="nav-item">

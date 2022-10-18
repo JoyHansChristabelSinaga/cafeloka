@@ -20,8 +20,8 @@
                 </div>
       <div class="col-6">
                 <div class="form-group">
-                    <label for="nama">Keterangan</label>
-                    <textarea class="form-control" id="nama" name="nama"> </textarea>
+                    <label for="keterangan">Keterangan</label>
+                    <textarea class="form-control" id="keterangan" name="keterangan"> </textarea>
                 </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
