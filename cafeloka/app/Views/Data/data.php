@@ -12,11 +12,12 @@
     <a href="/create" type="button" class="btn btn-primary m-4">Tambah Data</a>
 </div>
 <table class="table">
-    <thead>
+    <thead class="p-3">
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Keterangan</th>
+            <th scope="col">No</th>
+            <th scope="col" style="width:10% ;">Nama</th>
+            <th scope="col">Alamat</th>
+            <th scope="col" style="width:60% ;">Keterangan</th>
             <th scope="col">Aksi</th>
         </tr>
     </thead>
@@ -26,8 +27,8 @@
             <tr>
                 <th scope="row"><?= $no ?></th>
                 <td><?= $admin['nama_cafe'] ?></td>
+                <td><?= $admin['alamat'] ?></td>
                 <td><?= $admin['keterangan'] ?></td>
-
                 <td>
                     <div class="d-flex align-items-start">
                         <a class="btn btn-warning mb-3 ms-2" href="/edit/<?= $admin['id'] ?>"><i class="fa fa-edit"></i> Edit</a>

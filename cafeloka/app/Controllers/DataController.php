@@ -30,22 +30,23 @@ class DataController extends BaseController
 
     public function store()
     {
-
         if (!$this->validate([
             'nama_cafe' => 'required',
             'keterangan' => 'required',
+            'alamat' => 'required',
         ])) {
             return redirect()->to('/create');
         }
         $dataModel = new Data();
         $_data = [
             'nama_cafe' => $this->request->getPost('nama_cafe'),
+            'alamat' => $this->request->getPost('alamat'),
             'keterangan' => $this->request->getPost('keterangan')
         ];
 
         $dataModel->save($_data);
 
-        return redirect()->to('/vw_home');
+        return redirect()->to('/data');
     }
 
     public function view()
@@ -87,12 +88,14 @@ class DataController extends BaseController
         if(!$this->validate([
             'nama_cafe' => 'required',
             'keterangan' => 'required',
+            'alamat' => 'required',
         ])){
             return redirect()-> to('data/edit/'.$id);
         }
         $dataModel = new Data();
         $_data = [
             'nama_cafe' => $this->request->getVar('nama_cafe'),
+            'alamat' => $this->request->getVar('alamat'),
             'keterangan' => $this->request->getVar('keterangan')
         ]; 
 

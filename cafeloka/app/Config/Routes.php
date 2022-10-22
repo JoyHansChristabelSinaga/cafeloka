@@ -51,6 +51,9 @@ $routes->delete('/delete/(:any)', 'DataController::delete/$1');
 $routes->get('/index', 'Pages::index');
 $routes->get('/data', 'DataController::view');
 $routes->get('/create', 'DataController::create');
+
+$routes->get('/koko', 'Home::koko');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -2,7 +2,7 @@
 <section
     class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
     <div class="container">
-        <div class="d-sm-flex align-items-center justify-content-between mt-5">
+        <div class="d-sm-flex align-items-center justify-content-between mt-1">
             <div>
                 <h1>Welcome to
                     <span class="text-warning">
@@ -45,7 +45,7 @@
                                     <i class="bi bi-laptop"></i>
                                 </div>
                                 <h3 class="card-title mb-3 fw-bold"><?= $data[0]['nama_cafe']; ?></h3>
-                                <p class="card-text"><?= $data[0]['keterangan']; ?></p>
+                                <p class="card-text"><?= $data[0]['alamat']; ?></p>
                                 <a href="#" class="btn btn-primary">Cek Cafe</a>
                             </div>                     
                     </div>
@@ -55,7 +55,7 @@
                                     <i class="bi bi-laptop"></i>
                                 </div>
                                 <h3 class="card-title mb-3 fw-bold"><?= $data[1]['nama_cafe']; ?></h3>
-                                <p class="card-text"><?= $data[1]['keterangan']; ?></p>
+                                <p class="card-text"><?= $data[1]['alamat']; ?></p>
                                 <a href="#" class="btn btn-primary">Cek Cafe</a>
                             </div>                     
                     </div>
@@ -65,7 +65,7 @@
                                     <i class="bi bi-laptop"></i>
                                 </div>
                                 <h3 class="card-title mb-3 fw-bold"><?= $data[2]['nama_cafe']; ?></h3>
-                                <p class="card-text"><?= $data[2]['keterangan']; ?></p>
+                                <p class="card-text"><?= $data[2]['alamat']; ?></p>
                                 <a href="#" class="btn btn-primary">Cek Cafe</a>
                             </div>                     
                     </div>
