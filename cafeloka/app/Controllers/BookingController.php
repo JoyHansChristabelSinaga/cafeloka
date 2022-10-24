@@ -17,20 +17,19 @@ class BookingController extends BaseController
         ];
 
         return view('layout/header')
-            . view('vw_home', $_data)
+            . view('booking/booking', $_data)
             . view('layout/footer');
     }
 
-    public function create()
+    public function createBooking()
     {
         return view('layout/header')
-            . view('data/create')
+            . view('booking/create')
             . view('layout/footer');
     }
 
-    public function store()
+    public function storeBooking()
     {
-
         if (!$this->validate([
             'nama' => 'required',
             'alamat' => 'required',
@@ -38,7 +37,7 @@ class BookingController extends BaseController
             'nama_cafe' => 'required',
             'deskripsi' => 'required',
         ])) {
-            return redirect()->to('/create');
+            return redirect()->to('/createBooking');
         }
         $dataModel = new Booking();
         $_data = [
@@ -51,7 +50,7 @@ class BookingController extends BaseController
 
         $dataModel->save($_data);
 
-        return redirect()->to('layout/vw_home');
+        return redirect()->to('booking');
     }
 
     public function view()
@@ -64,18 +63,18 @@ class BookingController extends BaseController
         ];
 
         return view('layout/header')
-            . view('Data/data', $_data)
+            . view('booking/booking', $_data)
             . view('layout/footer');
     }
 
-    public function delete($id){
+    public function deleteBooking($id){
         $dataModel = new Booking();
         $dataModel->delete($id);
 
-        return redirect()->to('data');
+        return redirect()->to('/booking');
     }
 
-    public function edit($id){
+    public function editBooking($id){
         $dataModel = new Booking();
         $data = $dataModel->find($id);
 
@@ -84,11 +83,11 @@ class BookingController extends BaseController
         ];
 
         return view('layout/header')
-        . view('data/edit', $_data)
+        . view('booking/edit', $_data)
         . view('layout/footer');
     }
 
-    public function update($id){
+    public function updateBooking($id){
 
         if(!$this->validate([
             'nama' => 'required',
@@ -97,7 +96,7 @@ class BookingController extends BaseController
             'nama_cafe' => 'required',
             'deskripsi' => 'required',
         ])){
-            return redirect()-> to('data/edit/'.$id);
+            return redirect()-> to('booking/edit/'.$id);
         }
         $dataModel = new Booking();
         $_data = [
@@ -109,6 +108,6 @@ class BookingController extends BaseController
         ]; 
 
         $dataModel->update($id, $_data);
-        return redirect()->to('/data');
+        return redirect()->to('/booking');
     }
 }

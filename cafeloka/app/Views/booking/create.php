@@ -17,18 +17,26 @@
     </head>
 
     <div class="p-4">
-        <form action="/store" method="POST">
+        <form action="/storeBooking" method="POST">
             <div class="form-group">
-                <label for="npm">Nama Cafe</label>
-                <input type="text" class="form-control" id="npm" name="nama_cafe">
+                <label for="npm">Nama</label>
+                <input type="text" class="form-control" id="npm" name="nama">
             </div>
             <div class="form-group">
                 <label for="npm">Alamat</label>
                 <input type="text" class="form-control" id="npm" name="alamat">
             </div>
             <div class="form-group">
-                <label for="keterangan">Keterangan</label>
-                <textarea class="form-control" id="keterangan" name="keterangan"></textarea>
+                <label for="npm">kontak</label>
+                <input type="text" class="form-control" id="npm" name="kontak">
+            </div>
+            <div class="form-group">
+                <label for="npm">nama_cafe</label>
+                <input type="text" class="form-control" id="npm" name="nama_cafe">
+            </div>
+            <div class="form-group">
+                <label for="npm">deskripsi</label>
+                <input type="text" class="form-control" id="npm" name="deskripsi">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

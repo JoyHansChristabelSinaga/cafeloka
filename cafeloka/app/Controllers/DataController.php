@@ -30,6 +30,7 @@ class DataController extends BaseController
 
     public function store()
     {
+
         if (!$this->validate([
             'nama_cafe' => 'required',
             'keterangan' => 'required',
@@ -46,7 +47,7 @@ class DataController extends BaseController
 
         $dataModel->save($_data);
 
-        return redirect()->to('/data');
+        return redirect()->to('layout/vw_home');
     }
 
     public function view()

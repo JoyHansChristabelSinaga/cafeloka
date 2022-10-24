@@ -9,7 +9,7 @@
     <title>Cafeloka</title>
 </head>
 <div>
-    <a href="/create" type="button" class="btn btn-primary m-4">Tambah Data</a>
+    <a href="/createBooking" type="button" class="btn btn-primary m-4">Tambah Data</a>
 </div>
 <table class="table">
     <thead class="p-3">
@@ -17,7 +17,9 @@
             <th scope="col">No</th>
             <th scope="col" style="width:10% ;">Nama</th>
             <th scope="col">Alamat</th>
-            <th scope="col" style="width:60% ;">Keterangan</th>
+            <th scope="col">Kontak</th>
+            <th scope="col">Nama Cafe</th>
+            <th scope="col">Deskripsi</th>
             <th scope="col">Aksi</th>
         </tr>
     </thead>
@@ -33,8 +35,8 @@
                 <td><?= $admin['deskripsi'] ?></td>
                 <td>
                     <div class="d-flex align-items-start">
-                        <a class="btn btn-warning mb-3 ms-2" href="/edit/<?= $admin['id'] ?>"><i class="fa fa-edit"></i> Edit</a>
-                        <form action="/delete/<?= $admin['id'] ?>" method="post">
+                        <a class="btn btn-warning mb-3 ms-2" href="/editBooking/<?= $admin['id'] ?>"><i class="fa fa-edit"></i> Edit</a>
+                        <form action="/deleteBooking/<?= $admin['id'] ?>" method="post">
                             <input type="hidden" name="_method" value="DELETE" />
                             <button type="submit" class="btn btn-danger mb-3 ms-2"><i class="fa fa-trash"></i> Delete</button>
                         </form>

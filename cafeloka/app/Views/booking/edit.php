@@ -13,18 +13,26 @@
 
     <div class="P-4">
         <div class="row col-6 ms-3 mt-3">
-            <form action="/update/<?= $data['id'] ?>" method="POST">
+            <form action="/updateBooking/<?= $data['id'] ?>" method="POST">
               <div class="form-group">
-                <label for="nama">Nama_Cafe</label>
-                <input type="text" name="nama_cafe" class="form-control" id="nama_cafe" value="<?= $data['nama_cafe'] ?>">
+                <label for="nama">Nama</label>
+                <input type="text" name="nama" class="form-control" id="nama" value="<?= $data['nama'] ?>">
               </div>
               <div class="form-group">
                 <label for="nohp">Alamat</label>
                 <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $data['alamat'] ?>">
               </div>
               <div class="form-group">
-                <label for="nohp">Keterangan</label>
-                <input type="text" name="keterangan" class="form-control" id="keterangan" value="<?= $data['keterangan'] ?>">
+                <label for="nama">kontak</label>
+                <input type="text" name="kontak" class="form-control" id="kontak" value="<?= $data['kontak'] ?>">
+              </div>
+              <div class="form-group">
+                <label for="nama">Nama Cafe</label>
+                <input type="text" name="nama_cafe" class="form-control" id="nama_cafe" value="<?= $data['nama_cafe'] ?>">
+              </div>
+              <div class="form-group">
+                <label for="nohp">deskripsi</label>
+                <input type="text" name="deskripsi" class="form-control" id="deskripsi" value="<?= $data['deskripsi'] ?>">
               </div>
               <button type="submit" class="btn btn-primary mt-2 ms-2" style="width:20% ;">Edit Data</button>
           </form>

@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class Booking extends Model
 {
-    protected $DBGroup          = 'default';
+    // protected $DBGroup          = 'default';
     protected $table            = 'booking';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
