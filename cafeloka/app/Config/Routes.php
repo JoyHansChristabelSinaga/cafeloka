@@ -52,14 +52,14 @@ $routes->get('/index', 'Pages::index');
 $routes->get('/data', 'DataController::view');
 $routes->get('/create', 'DataController::create');
 
-$routes->get('/data/create', 'BookingController::createBooking');
+$routes->get('/createBooking', 'BookingController::createBooking');
 $routes->post('/storeBooking', 'BookingController::storeBooking');
 $routes->get('/editBooking/(:num)', 'BookingController::editBooking/$1');
 $routes->post('/updateBooking/(:num)', 'BookingController::updateBooking/$1');
 $routes->delete('/deleteBooking/(:any)', 'BookingController::deleteBooking/$1');
 // $routes->get('/index', 'Pages::index');
 $routes->get('/booking', 'BookingController::view');
-$routes->get('/createBooking', 'BookingController::createBooking');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

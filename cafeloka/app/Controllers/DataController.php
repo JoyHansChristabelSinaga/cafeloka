@@ -47,7 +47,7 @@ class DataController extends BaseController
 
         $dataModel->save($_data);
 
-        return redirect()->to('layout/vw_home');
+        return redirect()->to('vw_home');
     }
 
     public function view()

@@ -8,18 +8,17 @@ class Booking extends Model
 {
     // protected $DBGroup          = 'default';
     protected $table            = 'booking';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
-    protected $insertID         = 0;
-    protected $returnType       = 'array';
+    protected $primaryKey       = 'id_booking';
+    protected $allowedFields    = ['nama','alamat','kontak','deskripsi','id_data'];
+    protected $returnType       = 'object';
+    protected $useTimestamps    = true;
     protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
-    protected $allowedFields    = ['nama','alamat','kontak','nama_cafe','deskripsi'];
-
     // Dates
-    protected $useTimestamps = false;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+
+    function getAll(){
+        $builder = $this->db->table('booking');
+        $builder->join('data','data.id = booking.id_data');
+        $query = $builder->get();
+        return $query->getResult();
+    }
 }

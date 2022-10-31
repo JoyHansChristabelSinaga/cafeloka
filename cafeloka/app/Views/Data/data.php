@@ -26,13 +26,13 @@
         foreach ($data as $admin) : ?>
             <tr>
                 <th scope="row"><?= $no ?></th>
-                <td><?= $admin['nama_cafe'] ?></td>
-                <td><?= $admin['alamat'] ?></td>
-                <td><?= $admin['keterangan'] ?></td>
+                <td><?= $admin->nama_cafe ?></td>
+                <td><?= $admin->alamat ?></td>
+                <td><?= $admin->keterangan ?></td>
                 <td>
                     <div class="d-flex align-items-start">
-                        <a class="btn btn-warning mb-3 ms-2" href="/edit/<?= $admin['id'] ?>"><i class="fa fa-edit"></i> Edit</a>
-                        <form action="/delete/<?= $admin['id'] ?>" method="post">
+                        <a class="btn btn-warning mb-3 ms-2" href="/edit/<?= $admin->id ?>"><i class="fa fa-edit"></i> Edit</a>
+                        <form action="/delete/<?= $admin->id ?>" method="post">
                             <input type="hidden" name="_method" value="DELETE" />
                             <button type="submit" class="btn btn-danger mb-3 ms-2"><i class="fa fa-trash"></i> Delete</button>
                         </form>

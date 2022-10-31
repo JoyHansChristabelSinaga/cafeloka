@@ -9,7 +9,7 @@ class Booking extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id' => [
+            'id_booking' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
@@ -31,6 +31,11 @@ class Booking extends Migration
             'deskripsi' => [
                 'type' => 'TEXT',
             ],
+            'id_data' => [
+                'type'           => 'INT',
+                'constraint'     => 5,
+                'unsigned'       => true,
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true
@@ -40,7 +45,8 @@ class Booking extends Migration
                 'null' => true
             ],
         ]);
-        $this->forge->addKey('id', true);
+        $this->forge->addKey('id_booking', true);
+        $this->forge->addForeignKey('id_data', 'data', 'id' );
         $this->forge->createTable('booking');
     }
 

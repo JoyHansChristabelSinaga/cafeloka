@@ -11,6 +11,7 @@ class Data extends Model
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields    = ['nama_cafe','alamat','keterangan'];
+    protected $returnType       = 'object';
 
     // Dates
     protected $useTimestamps = false;

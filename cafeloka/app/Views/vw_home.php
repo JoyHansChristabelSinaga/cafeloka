@@ -1,5 +1,6 @@
 <!-- Showcase -->
-<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+<section
+    class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
     <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between mt-1">
             <div>
@@ -12,89 +13,51 @@
                     Cafeloka adalah layanan untuk mempermudah membooking cafe dengan layanan yang
                     sudah disediakan. Yuk tunggu apalagi, dengan layanan dan akses termudah itu
                     semua ada di CAFELOKA
-            </div>
-            <img class="img-fluid w-50 d-none d-sm-block" src="img/showcase.svg" alt="" />
-        </div>
-    </div>
-</section>
-
-<!-- Newsletter -->
-<section class="bg-primary text-light p-5">
-    <div class="container">
-        <div class="d-md-flex justify-content-between align-items-center">
-            <h3 class="mb-3 mb-md-0">Search Your Cafe</h3>
-
-            <div class="input-group news-input">
-                <input type="text" class="form-control" placeholder="Search Name Cafe" />
-                <button class="btn btn-dark btn-lg" type="button">Search</button>
+                </div>
+                <img class="img-fluid w-50 d-none d-sm-block" src="img/showcase.svg" alt=""/>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Boxes -->
-<section class="p-5">
-    <div class="container">
-        <div class="row text-center g-4">
-            <div class="col-md">
-                <div class="d-flex mr-3">
-                    <div class="card bg-dark text-light me-3" style="width:30vw ;">
-                        <div class="card-body text-center mb-3">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <h3 class="card-title mb-3 fw-bold"><?= $data[0]['nama_cafe']; ?></h3>
-                            <p class="card-text"><?= $data[0]['alamat']; ?></p>
-                            <a href="#" class="btn btn-primary">Cek Cafe</a>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-light me-3" style="width:30vw ;">
-                        <div class="card-body text-center mb-3">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <h3 class="card-title mb-3 fw-bold"><?= $data[1]['nama_cafe']; ?></h3>
-                            <p class="card-text"><?= $data[1]['alamat']; ?></p>
-                            <a href="#" class="btn btn-primary">Cek Cafe</a>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-light me-3" style="width:30vw ;">
-                        <div class="card-body text-center mb-3">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <h3 class="card-title mb-3 fw-bold"><?= $data[2]['nama_cafe']; ?></h3>
-                            <p class="card-text"><?= $data[2]['alamat']; ?></p>
-                            <a href="#" class="btn btn-primary">Cek Cafe</a>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-light me-3" style="width:30vw ;">
-                        <div class="card-body text-center mb-3">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <h3 class="card-title mb-3 fw-bold"><?= $data[3]['nama_cafe']; ?></h3>
-                            <p class="card-text"><?= $data[3]['alamat']; ?></p>
-                            <a href="#" class="btn btn-primary">Cek Cafe</a>
-                        </div>
-                    </div>
-                    <div class="card bg-dark text-light me-3" style="width:30vw ;">
-                        <div class="card-body text-center mb-3">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-laptop"></i>
-                            </div>
-                            <h3 class="card-title mb-3 fw-bold"><?= $data[4]['nama_cafe']; ?></h3>
-                            <p class="card-text"><?= $data[4]['alamat']; ?></p>
-                            <a href="#" class="btn btn-primary">Cek Cafe</a>
-                        </div>
-                    </div>
+    <!-- Newsletter -->
+    <section class="bg-primary text-light p-5">
+        <div class="container">
+            <div class="d-md-flex justify-content-between align-items-center">
+                <h3 class="mb-3 mb-md-0">Search Your Cafe</h3>
+
+                <div class="input-group news-input">
+                    <input type="text" class="form-control" placeholder="Search Name Cafe"/>
+                    <button class="btn btn-dark btn-lg" type="button">Search</button>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Learn Sections <section id="learn" class="p-5"> <div class="container">
+    <!-- Boxes -->
+    <section class="p-5">
+        <div class="container">
+            <div class="row text-center g-4">
+            <?php foreach ($data as $key => $value) : ?>
+                <div class="col-4">
+                    <div class="d-flex mr-3">
+                    <div class="card bg-dark text-light me-3" style="width:30vw ;">
+                            <div class="card-body text-center mb-3">
+                                <div class="h1 mb-3">
+                                    <i class="bi bi-laptop"></i>
+                                </div>
+                                <h3 class="card-title mb-3 fw-bold"><?= $value->nama_cafe ?></h3>
+                                <p class="card-text"><?= $value->alamat ?></p>
+                                <a href="#" class="btn btn-primary">Cek Cafe</a>
+                            </div>                     
+                    </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn Sections <section id="learn" class="p-5"> <div class="container">
     <div class="row align-items-center justify-content-between"> <div
     class="col-md"> <img src="img/fundamentals.svg" class="img-fluid" alt=""/>
     </div> <div class="col-md p-5"> <h2>Learn The Fundamentals</h2> <p class="lead">

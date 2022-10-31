@@ -13,27 +13,32 @@
 
     <div class="P-4">
         <div class="row col-6 ms-3 mt-3">
-            <form action="/updateBooking/<?= $data['id'] ?>" method="POST">
-              <div class="form-group">
-                <label for="nama">Nama</label>
-                <input type="text" name="nama" class="form-control" id="nama" value="<?= $data['nama'] ?>">
-              </div>
-              <div class="form-group">
-                <label for="nohp">Alamat</label>
-                <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $data['alamat'] ?>">
-              </div>
-              <div class="form-group">
-                <label for="nama">kontak</label>
-                <input type="text" name="kontak" class="form-control" id="kontak" value="<?= $data['kontak'] ?>">
-              </div>
-              <div class="form-group">
-                <label for="nama">Nama Cafe</label>
-                <input type="text" name="nama_cafe" class="form-control" id="nama_cafe" value="<?= $data['nama_cafe'] ?>">
-              </div>
-              <div class="form-group">
-                <label for="nohp">deskripsi</label>
-                <input type="text" name="deskripsi" class="form-control" id="deskripsi" value="<?= $data['deskripsi'] ?>">
-              </div>
+            <form action="/updateBooking/<?= $booking->id_booking ?>" method="POST">
+            <div class="form-group">
+                <label for="npm">Nama</label>
+                <input type="text" class="form-control" id="npm" name="nama" value="<?= $booking->nama ?>">
+            </div>
+            <div class="form-group">
+                <label for="npm">Alamat</label>
+                <input type="text" class="form-control" id="npm" name="alamat" value="<?= $booking->alamat ?>">
+            </div>
+            <div class="form-group">
+                <label for="npm">kontak</label>
+                <input type="text" class="form-control" id="npm" name="kontak" value="<?= $booking->kontak ?>">
+            </div>
+            <div class="form-group">
+                <label for="npm">deskripsi</label>
+                <input type="text" class="form-control" id="npm" name="deskripsi" value="<?= $booking->deskripsi ?>">
+            </div>
+            <div class="form-group">
+                <label for="">Nama Cafe</label>
+                <select name="id_data" id="" class="form-control" required>
+                    <option value="" hidden></option>
+                    <?php foreach($data as $key => $value) : ?>
+                        <option value="<?= $value->id ?>" <?= $booking->id_data == $value->id ? 'selected' :null ?>> <?= $value->nama_cafe ?> </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
               <button type="submit" class="btn btn-primary mt-2 ms-2" style="width:20% ;">Edit Data</button>
           </form>
           </div>

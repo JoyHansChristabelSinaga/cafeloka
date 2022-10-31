@@ -31,12 +31,18 @@
                 <input type="text" class="form-control" id="npm" name="kontak">
             </div>
             <div class="form-group">
-                <label for="npm">nama_cafe</label>
-                <input type="text" class="form-control" id="npm" name="nama_cafe">
-            </div>
-            <div class="form-group">
                 <label for="npm">deskripsi</label>
                 <input type="text" class="form-control" id="npm" name="deskripsi">
             </div>
+            <div class="form-group">
+                <label for="">Nama Cafe</label>
+                <select name="id_data" id="" class="form-control" required>
+                    <option value="" hidden></option>
+                    <?php foreach($data as $key => $value) : ?>
+                        <option value="<?= $value->id ?>"> <?= $value->nama_cafe ?> </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
