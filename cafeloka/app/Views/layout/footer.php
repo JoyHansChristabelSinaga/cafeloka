@@ -1,7 +1,21 @@
-<div class="ms-3">&copy; 2021</div>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-</div>
-</div>
+<footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2021 &copy; PPPPP</p>
+                    </div>
+                    <div class="float-end">
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="/assets/js/bootstrap.js"></script>
+    <script src="/assets/js/app.js"></script>
+    
+<!-- Need: Apexcharts -->
+<script src="/assets/extensions/apexcharts/apexcharts.min.js"></script>
+<script src="/assets/js/pages/dashboard.js"></script>
+
 </body>
+
 </html>
