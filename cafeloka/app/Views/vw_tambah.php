@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <div class="col-md">
-                    <div class="card bg-dark text-light">
+                    <div class="card bg-dark text-dark">
                         <div class="card-body text-center">
                             <div class="h1 mb-3">
                                 <i class="bi bi-people"></i>

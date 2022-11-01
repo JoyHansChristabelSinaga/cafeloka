@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Admin Hotel Green Batara</title>
+    <title>Dashboard - CAFELOKA.Id</title>
     <link rel="stylesheet" href="/assets/css/main/app.css">
     <link rel="stylesheet" href="/assets/css/main/app-dark.css">
     <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/795473402617135194/1034376602995396639/GreemBatara.png" type="image/x-icon">
