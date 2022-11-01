@@ -274,5 +274,6 @@
             </div>
         </div>
     </section>
+    
 </div>
 <?php echo view('layout/footer'); ?>
