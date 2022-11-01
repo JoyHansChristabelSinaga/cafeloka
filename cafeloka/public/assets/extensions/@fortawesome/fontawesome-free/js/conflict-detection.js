@@ -128,7 +128,7 @@
     var noConflictsCount = Object.keys(nodesTested.noConflict).length;
 
     if (noConflictsCount > 0) {
-      console.info("%cNo conflict".concat(noConflictsCount > 1 ? 's' : '', " found with ").concat(noConflictsCount == 1 ? 'this' : 'these', ":"), 'color: green; font-size: large');
+      console.info("%cNo conflict".concat(noConflictsCount > 1 ? 's' : '', " found with ").concat(noConflictsCount == 1 ? 'this' : 'these', ":"), 'color: blue; font-size: large');
       var _data = {};
 
       for (var _key2 in nodesTested.noConflict) {

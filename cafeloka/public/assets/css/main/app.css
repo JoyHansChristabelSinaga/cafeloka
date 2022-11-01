@@ -628,7 +628,7 @@ sup {
   top: -0.5em;
 }
 a {
-  color: var(--bs-link-color);
+  color: rgb(255, 157, 0);
   text-decoration: underline;
 }
 a:hover {

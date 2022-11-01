@@ -4,16 +4,24 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Data;
+use App\Models\Booking;
 
 class DataController extends BaseController
 {
+
+    function __construct()
+    {
+        $this->booking = new Booking();
+    }
+
     public function index()
     {
         $dataModel = new Data();
         $data = $dataModel->findAll();
 
         $_data = [
-            'data' => $data
+            'data' => $data,
+            'book' => $this->booking->getAll()
         ];
 
         return view('layout/header')
@@ -56,7 +64,8 @@ class DataController extends BaseController
         $data = $dataModel->findAll();
 
         $_data = [
-            'data' => $data
+            'data' => $data,
+            'book' => $this->booking->getAll()
         ];
 
         return view('layout/header')

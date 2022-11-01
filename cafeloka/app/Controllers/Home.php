@@ -13,11 +13,9 @@ class Home extends BaseController
 
 	public function index()
 	{
-		$_data = [
-            'siuu' => $this->data->findAll()
-        ];
+
 		return view('layout/header')
-		. view('vw_home', $_data)
+		. view('vw_home')
 		. view('layout/footer');
 	}
 }

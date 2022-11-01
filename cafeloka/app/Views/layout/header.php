@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - CAFELOKA.Id</title>
+    <title>Dashboard - Admin Hotel Green Batara</title>
     <link rel="stylesheet" href="/assets/css/main/app.css">
     <link rel="stylesheet" href="/assets/css/main/app-dark.css">
     <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/795473402617135194/1034376602995396639/GreemBatara.png" type="image/x-icon">
     <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/795473402617135194/1034376602995396639/GreemBatara.png" type="image/png">
     <link rel="stylesheet" href="/assets/css/shared/iconly.css">
+    <link rel="stylesheet" href="cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
 </head>
 
@@ -20,7 +21,7 @@
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <a href="/dashboard/"><img src="https://cdn.discordapp.com/attachments/795473402617135194/1034376602995396639/GreemBatara.png" alt="Logo" srcset="">Cafe</a>
+                            <a href="/dashboard/"><img src="https://cdn.discordapp.com/attachments/795473402617135194/1034376602995396639/GreemBatara.png" alt="Logo" srcset="">Cafeloka</a>
                         </div>
                         <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
@@ -50,7 +51,7 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item active ">
+                        <li class="sidebar-item">
                             <a href="/home/" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
@@ -65,7 +66,7 @@
                         </li>
 
                         <li class="sidebar-item  ">
-                            <a href="" class='sidebar-link'>
+                            <a href="/data" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span>Data</span>
                             </a>

@@ -41,7 +41,6 @@ $routes->post('/register/process', 'Register::process');
 $routes->get('/login', 'Login::index');
 $routes->post('/login/process', 'Login::process');
 $routes->get('/logout', 'Login::logout');
-$routes->get('/cafe', 'profilcafecontrol::index');
 
 // create
 $routes->get('/data/data', 'DataController::create');

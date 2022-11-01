@@ -21,4 +21,13 @@ class Booking extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+
+    function getPaginated($num, $keyword = null){
+        $builder = $this->builder();
+        $builder->join('data','data.id = booking.id_data');
+        return[
+            'book' => $this->paginate($num),
+            'pager' => $this->pager
+        ];
+    }
 }
