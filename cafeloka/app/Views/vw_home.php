@@ -271,7 +271,7 @@
                                                 </div>
                                             </td>
                                             <td class="col-auto">
-                                                <p class=" mb-0">Congratulations on your graduation!</p>
+                                                <p class=" mb-0">Ara ara~</p>
                                             </td>
                                         </tr>
                                         <tr>

@@ -66,7 +66,11 @@
                         </li>
 
                         <li class="sidebar-item  ">
+<<<<<<< Updated upstream
                             <a href="/data" class='sidebar-link'>
+=======
+                            <a href="/booking/" class='sidebar-link'>
+>>>>>>> Stashed changes
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span>Data</span>
                             </a>

@@ -1,88 +1,74 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Web Lanjut</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/data/data">Create</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/data">Data</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Begin page content -->
-<main class="flex-shrink-0">
-    <div class="container">
-        <h1 class="mt-5">Register</h1>
-        Bergabung bersama Cafeloka
-        <hr />
-        <?php if (!empty(session()->getFlashdata('error'))) : ?>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <h4>Periksa Entrian Form</h4>
-                </hr />
-                <?php echo session()->getFlashdata('error'); ?>
-            </div>
-        <?php endif; ?>
-        <form method="post" action="<?= base_url(); ?>/register/process">
-            <?= csrf_field(); ?>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" name="username">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
-            </div>
-            <div class="mb-3">
-                <label for="password_conf" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="password_conf" name="password_conf">
-            </div>
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name">
-            </div>
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Register</button>
-                <a href="/login" class="btn btn-primary mr-3">Sudah Punya Akun?</a>
-            </div>
-        </form>
-        <hr />
-
-    </div>
-</main>
-
-<footer class="footer mt-auto py-3 bg-light">
-    <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
-    </div>
-</footer>
-
 </body>
 </html>
+<?php echo view('layout/header'); ?>
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Register</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Here Code To Create Form -->
+    <section id="basic-horizontal-layouts">
+        <div class="row match-height">
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Abandon all hopes, ye who enlisted here!
+                        </h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="p-4">
+                                        <?php if (!empty(session()->getFlashdata('error'))) : ?>
+                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                <h4>Periksa Entrian Form</h4>
+                                                </hr />
+                                                <?php echo session()->getFlashdata('error'); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <form method="post" action="<?= base_url(); ?>/register/process">
+                                            <?= csrf_field(); ?>
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="username" name="username">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="password" name="password">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password_conf" class="form-label">Confirm Password</label>
+                                                <input type="password" class="form-control" id="password_conf" name="password_conf">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Name</label>
+                                                <input type="text" class="form-control" id="name" name="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <button type="submit" class="btn btn-primary">Register</button>
+                                                <a href="/login" class="btn btn-primary mr-3">Sudah Punya Akun?</a>
+                                            </div>
+                                        </form>
+                                            <hr />
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+</section>
+</div>
+
+<?php echo view('layout/footer'); ?>
