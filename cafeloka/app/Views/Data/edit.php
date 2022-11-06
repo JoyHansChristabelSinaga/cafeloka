@@ -1,32 +1,41 @@
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-  <title>Cafeloka</title>
-</head>
+<?= $this->extend('template') ?>
+<?= $this->section('content') ?>
 <table class="table">
   <tbody>
 
     <div class="P-4">
-        <div class="row col-6 ms-3 mt-3">
-            <form action="/update/<?= $data->id ?>" method="POST">
-              <div class="form-group">
-                <label for="nama">Nama_Cafe</label>
-                <input type="text" name="nama_cafe" class="form-control" id="nama_cafe" value="<?= $data->nama_cafe ?>">
-              </div>
-              <div class="form-group">
-                <label for="nohp">Alamat</label>
-                <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $data->alamat ?>">
-              </div>
-              <div class="form-group">
-                <label for="nohp">Keterangan</label>
-                <input type="text" name="keterangan" class="form-control" id="keterangan" value="<?= $data->keterangan ?>">
-              </div>
-              <button type="submit" class="btn btn-primary mt-2 ms-2" style="width:20% ;">Edit Data</button>
-          </form>
+      <div class="row col-6 ms-3 mt-3">
+        <form action="/update/<?= $data->id ?>" method="POST">
+          <div class="form-group mb-3">
+            <label for="nama">Nama Cafe</label>
+            <input type="text" name="nama_cafe" class="form-control" id="nama_cafe" value="<?= $data->nama_cafe ?>">
           </div>
-        </div>
+          <div class="form-group mb-3">
+            <label for="nama">Nama Manager</label>
+            <input type="text" name="manager" class="form-control" id="nama_cafe" value="<?= $data->nama_cafe ?>">
+          </div>
+          <div class="form-group mb-3">
+            <label for="nohp">Alamat</label>
+            <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $data->alamat ?>">
+          </div>
+          <div class="form-group mb-3">
+                        <label for="">Cabang</label>
+                        <select name="id_daerah" id="" class="form-control" required>
+                            <option value="" hidden></option>
+                            <?php foreach ($daerah as $key => $value) : ?>
+                                <option value="<?= $value->id_daerah ?>" <?= $data->id_daerah == $value->id_daerah ? 'selected' : null ?>> <?= $value->nama_daerah ?> </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+          <div class="form-group mb-3">
+            <label for="nohp">Keterangan</label>
+            <textarea name="keterangan" class="form-control" id="keterangan" cols="30" rows="8"><?= $data->keterangan ?></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary mt-2 ms-2" style="width:20% ;">Edit Data</button>
+        </form>
+      </div>
+    </div>
+
+  </tbody>
+</table>
+<?= $this->endSection() ?>

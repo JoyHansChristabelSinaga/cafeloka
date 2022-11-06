@@ -4,14 +4,17 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Data;
-use App\Models\Booking;
+use App\Models\Daerah;
 
 class DataController extends BaseController
 {
 
+    // protected $helpers = ['custom'];
+
     function __construct()
     {
-        $this->booking = new Booking();
+        $this->daerah = new Daerah();
+        $this->data = new Data();
     }
 
     public function index()
@@ -20,20 +23,18 @@ class DataController extends BaseController
         $data = $dataModel->findAll();
 
         $_data = [
-            'data' => $data,
-            'book' => $this->booking->getAll()
+            'data' => $data
         ];
 
-        return view('layout/header')
-            . view('vw_home', $_data)
-            . view('layout/footer');
+        return view('vw_home', $_data);
     }
 
     public function create()
     {
-        return view('layout/header')
-            . view('data/create')
-            . view('layout/footer');
+        $_data = [
+            'data' => $this->daerah->findAll()
+        ];
+        return view('data/create',$_data);
     }
 
     public function store()
@@ -41,75 +42,51 @@ class DataController extends BaseController
 
         if (!$this->validate([
             'nama_cafe' => 'required',
+            'manager' => 'required',
             'keterangan' => 'required',
             'alamat' => 'required',
+            'id_daerah' => 'required'
         ])) {
             return redirect()->to('/create');
         }
-        $dataModel = new Data();
-        $_data = [
-            'nama_cafe' => $this->request->getPost('nama_cafe'),
-            'alamat' => $this->request->getPost('alamat'),
-            'keterangan' => $this->request->getPost('keterangan')
-        ];
+        $data = $this->request->getPost();
+        $this->data->insert($data);
+        // $dataModel->save($_data);
 
-        $dataModel->save($_data);
-
-        return redirect()->to('vw_home');
+        return redirect()->to('/data');
     }
 
     public function view()
     {
-        $dataModel = new Data();
-        $data = $dataModel->findAll();
-
         $_data = [
-            'data' => $data,
-            'book' => $this->booking->getAll()
+            'data' => $this->data->getAll()
         ];
-
-        return view('layout/header')
-            . view('Data/data', $_data)
-            . view('layout/footer');
+        return view('Data/data', $_data);
     }
 
-    public function delete($id){
+    public function delete($id)
+    {
         $dataModel = new Data();
         $dataModel->delete($id);
 
-        return redirect()->to('data');
+        return redirect()->to('/data');
     }
 
-    public function edit($id){
-        $dataModel = new Data();
-        $data = $dataModel->find($id);
+    public function edit($id)
+    {
+        $data = $this->data->find($id);
 
-        $_data = [
-            'data' => $data
-        ];
-
-        return view('layout/header')
-        . view('data/edit', $_data)
-        . view('layout/footer');
-    }
-
-    public function update($id){
-
-        if(!$this->validate([
-            'nama_cafe' => 'required',
-            'keterangan' => 'required',
-            'alamat' => 'required',
-        ])){
-            return redirect()-> to('data/edit/'.$id);
+        if(is_object($data)){
+            $_data['data'] = $data;
+            $_data['daerah'] = $this->daerah->findAll();
+            return view('data/edit',$_data);
         }
-        $dataModel = new Data();
-        $_data = [
-            'nama_cafe' => $this->request->getVar('nama_cafe'),
-            'alamat' => $this->request->getVar('alamat'),
-            'keterangan' => $this->request->getVar('keterangan')
-        ]; 
+        }
 
-        $dataModel->update($id, $_data);
+    public function update($id)
+    {
+        $_data = $this->request->getPost();
+        $this->data->update($id, $_data);
         return redirect()->to('/data');
     }
 }

@@ -1,64 +1,92 @@
+
+
+<head>
+	<title>Account</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="template/assets/css/viewAccount.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="container" id="container">
+		<div class="row">
+			<div class="form-container sign-up-container">
+      <form method="post" action="<?= base_url(); ?>/register/process">
+        <?= csrf_field(); ?>
+					<h1>Create Account</h1>
+					<div class="social-container">
+						<a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></i></a>
+						<a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></i></a>
+						<a href="#" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></i></a>
+					</div>
+					<span>or use your email for registration</span>
+          <input type="text" placeholder="Username" name="username">
+					<input type="text" placeholder="Name" name="name">
+					<input type="password" placeholder="Email" name="password">
+					<input type="password" placeholder="Password" name="password_conf">
+					<button type="submit">Sign Up</button>
+					<p id="mobile_para">To keep connected with us,please login</p>
+					<button class="ghost_mobile" id="signIn_mobile">Sign In</button>
+				</form>
+			</div>
+			<div class="form-container sign-in-container">
+      <form method="post" action="<?= base_url(); ?>/login/process">
+      <?= csrf_field(); ?>
+					<h1>Sign in</h1>
+					<div class="social-container">
+						<a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></i></a>
+						<a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+						<a href="#" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+					</div>
+					<span>or use your account</span>
+					<input type="text" placeholder="Username" name="username" />
+					<input type="password" placeholder="Password" name="password" />
+					<a href="#">Forgot your password?</a>
+					<button type="submit">Sign In</button>
+					<p id="mobile_para">Don't have an account? Sign up here !!</p>
+					<button class="ghost_mobile" id="signUp_mobile">Sign Up</button>
+				</form>
+			</div>
+			<div class="overlay-container">
+				<div class="overlay">
+					<div class="overlay-panel overlay-left">
+						<h1>Selamat Datang Kembali!</h1>
+						<p>Untuk tetap terkoneksi denganku pastikan masuk dengan data akunmu ya!</p>
+						<button class="ghost" id="signIn">Sign In</button>
+					</div>
+					<div class="overlay-panel overlay-right">
+						<h1>Halo!</h1>
+						<p>Masukkan data personal anda dan mari membaca bersama ku!</p>
+						<button class="ghost" id="signUp">Sign Up</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		const signUpButton = document.getElementById('signUp');
+		const signInButton = document.getElementById('signIn');
+		const container = document.getElementById('container');
+		const signUpButton_mobile = document.getElementById('signUp_mobile');
+		const signInButton_mobile = document.getElementById('signIn_mobile');
+
+
+		signUpButton.addEventListener('click', () => {
+			container.classList.add("right-panel-active");
+		});
+
+		signInButton.addEventListener('click', () => {
+			container.classList.remove("right-panel-active");
+		});
+
+		signUpButton_mobile.addEventListener('click', () => {
+			container.classList.add("right-panel-active");
+		});
+
+		signInButton_mobile.addEventListener('click', () => {
+			container.classList.remove("right-panel-active");
+		});
+	</script>
 </body>
-</html>
-<?php echo view('layout/header'); ?>
-
-<div class="page-heading">
-    <div class="page-title">
-        <div class="row">
-            <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Login</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- Here Code To Create Form -->
-    <section id="basic-horizontal-layouts">
-        <div class="row match-height">
-            <div class="col-md-6 col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Abandon all hopes, ye who enter here!
-                        </h4>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body">
-                                <div class="form-body">
-                                    <div class="row">
-                                        <div class="p-4">
-                                            <?php if (!empty(session()->getFlashdata('error'))) : ?>
-                                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                    <?php echo session()->getFlashdata('error'); ?>
-                                                </div>
-                                            <?php endif; ?>
-                                            <form method="post" action="<?= base_url(); ?>/login/process">
-                                                <?= csrf_field(); ?>
-                                                <div class="mb-3">
-                                                    <label for="username" class="form-label">Username</label>
-                                                    <input type="text" name="username" id="username" placeholder="Username" class="form-control" required autofocus>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="password" class="form-label">Password</label>
-                                                    <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <button type="submit" class="btn btn-primary">Login</button>
-                                                    <a href="/register" class="btn btn-primary mr-3">Belum Punya Akun?</a>
-                                                </div>
-                                            </form>
-                                            <hr />
-                                            </div>
-                                        </div>
-                                    </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-</div>
-</section>
-</div>
-
-<?php echo view('layout/footer'); ?>

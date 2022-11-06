@@ -8,6 +8,8 @@ use App\Models\Data;
 
 class BookingController extends BaseController
 {
+    protected $helpers = ['custom'];
+
     function __construct()
     {
         $this->booking = new Booking();
@@ -20,12 +22,10 @@ class BookingController extends BaseController
         // $data = $dataModel->getAll();
 
         // $_data = [
-        //     'siuu' => $this->booking->findAll()
+        //     'dbooking' => $this->booking->findAll()
         // ];
         // dd($this->booking->getAll());
-        return view('layout/header')
-            . view('booking/booking')
-            . view('layout/footer');
+        return view('booking/booking');
     }
 
     public function createBooking()
@@ -33,9 +33,7 @@ class BookingController extends BaseController
         $_data = [
             'data' => $this->data->findAll()
         ];
-        return view('layout/header')
-            . view('booking/create', $_data)
-            . view('layout/footer');
+        return view('booking/create', $_data);
     }
 
     public function storeBooking()
@@ -68,22 +66,22 @@ class BookingController extends BaseController
     public function view()
     {
         $_data = [
-            'siuu' => $this->booking->getAll()
+            'dbooking' => $this->booking->getAll()
         ];
         // dd($this->booking->getAll());
-        return view('layout/header')
-            . view('booking/booking',$_data)
-            . view('layout/footer');
+        return view('booking/booking', $_data);
     }
 
-    public function deleteBooking($id){
+    public function deleteBooking($id)
+    {
         $dataModel = new Booking();
         $dataModel->delete($id);
 
         return redirect()->to('/booking');
     }
 
-    public function editBooking($id){
+    public function editBooking($id)
+    {
         // $dataModel = new Booking();
         // $data = $dataModel->find($id);
 
@@ -91,24 +89,23 @@ class BookingController extends BaseController
         //     'data' => $data
         // ];
         $booking = $this->booking->find($id);
-        
+
         $data['booking'] = $booking;
         $data['data'] = $this->data->findAll();
 
-        return view('layout/header')
-        . view('booking/edit', $data)
-        . view('layout/footer');
+        return view('booking/edit', $data);
     }
 
-    public function updateBooking($id){
+    public function updateBooking($id)
+    {
 
-        if(!$this->validate([
+        if (!$this->validate([
             'nama' => 'required',
             'alamat' => 'required',
             'kontak' => 'required',
             'deskripsi' => 'required',
-        ])){
-            return redirect()-> to('booking/edit/'.$id);
+        ])) {
+            return redirect()->to('booking/edit/' . $id);
         }
         // $dataModel = new Booking();
         // $_data = [

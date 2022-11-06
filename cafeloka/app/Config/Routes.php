@@ -60,6 +60,7 @@ $routes->delete('/deleteBooking/(:any)', 'BookingController::deleteBooking/$1');
 // $routes->get('/index', 'Pages::index');
 $routes->get('/booking', 'BookingController::view');
 
+$routes->get('/tampil/(:any)', 'HalamanCafe::index/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -22,6 +22,9 @@ class Data extends Migration
             'keterangan' => [
                 'type' => 'TEXT',
             ],
+            'id_daerah' => [
+                'type' => 'TEXT',
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true
@@ -32,6 +35,7 @@ class Data extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('id_daerah', 'daerah', 'id_daerah' );
         $this->forge->createTable('data');
     }
 
