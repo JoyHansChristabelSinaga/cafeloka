@@ -221,17 +221,46 @@
           <p>TOP 6 Cafe</p>
         </div>
 
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
         <div class="row">
-        <?php foreach ($data as $key => $value) : ?>
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-3" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <img width="150px" class="img-thumbnail" src="<?= base_url() . "/gambarCafe/" . $value->foto; ?>">
-              <h4><a href="/tampil/<?= $value->id ?>"><?= $value->nama_cafe ?></a></h4>
-              <p style="width:400px ;"><?= $value->alamat ?></p>
-            </div>
-          </div>
-          <?php endforeach; ?>
-      </div>
+        <div class="card-body">
+		    <div class="table-responsive">
+			<br>
+			<table id="example1" class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Foto</th>
+						<th>Nama cafe</th>
+						<th>Manager</th>
+						<th>Alamat</th>
+						<th>Keterangan</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($data as $datas) : ?>
+						<tr>
+							<td>
+								<img src="/gambarCafe/<?= $datas->foto; ?>" width="70px" alt="foto" />
+							</td>
+							<td><?= $datas->nama_cafe ?></td>
+							<td><?= $datas->manager ?></td>
+							<td><?= $datas->alamat ?></td>
+              <td><?= $datas->keterangan ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+      $(document).ready(function () {
+    $('#example1').DataTable({
+    });
+});
+    </script>    
     </section><!-- End Services Section -->
 
     <!-- ======= Cta Section ======= -->

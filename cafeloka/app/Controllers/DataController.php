@@ -103,35 +103,6 @@ class DataController extends BaseController
 
         $dataBerkas = $this->request->getFile('foto');
 		$fileName = $dataBerkas->getRandomName();
-        $filename = $_FILES['gambar']['name'];
-        $tmp_name = $_FILES['gambar']['tmp_name'];
-
-        // jika admin ganti gambar
-        if($filename != ''){
-            $type1 = explode('.', $filename);
-
-            $type2 = $type1[1];
-
-            $newname = 'produk' .time(). '.'.$type2;
-
-            //menampung data format file yang diizinkan
-            $tipe_diizinkan = array('jpg', 'jpeg', 'png', 'gif');
-            
-            //validasi format file
-            if(!in_array($type2, $tipe_diizinkan)){
-                // jika format file tidak ada di dalam tipe diizinkan
-                echo '<script>alert("Format file tidak diizinkan")</script>';
-            }else{
-                unlink('./produk/'.$foto);
-                move_uploaded_file($tmp_name, './produk/'.$newname);
-                $namagambar = $newname;
-            }
-
-        }else{
-            // jika admin tidak ganti gambar
-            $namagambar = $foto;
-
-        }
 		$this->data->update($id,[
             'nama_cafe' => $this->request->getPost('nama_cafe'),
             'manager' => $this->request->getPost('manager'),
