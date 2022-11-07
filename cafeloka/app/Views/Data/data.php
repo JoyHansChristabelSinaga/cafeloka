@@ -9,9 +9,11 @@
             <th scope="col">No</th>
             <th scope="col" style="width:10% ;">Nama</th>
             <th scope="col">Manager</th>
-            <th scope="col" style="width:30% ;">Alamat</th>
+            <th scope="col" style="width:10% ;">Alamat</th>
             <th scope="col">Daerah</th>
             <th scope="col" style="width:30% ;">Keterangan</th>
+            <th scope="col" style="width:20% ;">Foto</th>
+
             <th scope="col">Aksi</th>
         </tr>
     </thead>
@@ -25,6 +27,7 @@
                 <td><?= $admin->alamat ?></td>
                 <td><?= $admin->nama_daerah ?></td>
                 <td><?= $admin->keterangan ?></td>
+                <td><img width="150px" class="img-thumbnail" src="<?= base_url() . "/gambarCafe/" . $admin->foto; ?>"></td>
                 <td>
                     <div class="d-flex align-items-start">
                         <a class="btn btn-warning mb-3 ms-2" href="/edit/<?= $admin->id ?>"><i class="fa fa-edit"></i> Edit</a>
