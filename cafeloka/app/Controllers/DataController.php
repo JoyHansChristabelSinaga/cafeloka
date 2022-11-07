@@ -94,7 +94,7 @@ class DataController extends BaseController
             $_data['daerah'] = $this->daerah->findAll();
             return view('data/edit',$_data);
         }
-        }
+    }
 
     public function update($id)
     {

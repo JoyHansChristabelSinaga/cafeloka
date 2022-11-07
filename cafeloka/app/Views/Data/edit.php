@@ -19,14 +19,18 @@
             <input type="text" name="alamat" class="form-control" id="alamat" value="<?= $data->alamat ?>">
           </div>
           <div class="form-group mb-3">
-                        <label for="">Cabang</label>
-                        <select name="id_daerah" id="" class="form-control" required>
-                            <option value="" hidden></option>
+              <label for="">Cabang</label>
+              <select name="id_daerah" id="" class="form-control" required>
+                <option value="" hidden></option>
                             <?php foreach ($daerah as $key => $value) : ?>
                                 <option value="<?= $value->id_daerah ?>" <?= $data->id_daerah == $value->id_daerah ? 'selected' : null ?>> <?= $value->nama_daerah ?> </option>
                             <?php endforeach; ?>
-                        </select>
-                    </div>
+              </select>
+            </div>
+        <div class="mb-3">
+            <label for="foto" class="form-label">foto</label>
+            <input type="file" class="form-control" id="foto" name="foto">
+        </div>
           <div class="form-group mb-3">
             <label for="nohp">Keterangan</label>
             <textarea name="keterangan" class="form-control" id="keterangan" cols="30" rows="8"><?= $data->keterangan ?></textarea>
