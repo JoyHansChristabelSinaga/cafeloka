@@ -49,10 +49,23 @@ class DataController extends BaseController
         ])) {
             return redirect()->to('/create');
         }
-        $data = $this->request->getPost();
-        $this->data->insert($data);
-        // $dataModel->save($_data);
+        // $data = $this->request->getPost();
+        // $this->data->insert($data);
+        // // $dataModel->save($_data);
 
+        // return redirect()->to('/data');
+
+        $dataBerkas = $this->request->getFile('foto');
+		$fileName = $dataBerkas->getRandomName();
+		$this->data->insert([
+            'nama_cafe' => $this->request->getPost('nama_cafe'),
+            'manager' => $this->request->getPost('manager'),
+            'keterangan' => $this->request->getPost('keterangan'),
+			'foto' => $fileName,
+			'alamat' => $this->request->getPost('alamat'),
+            'id_daerah' => $this->request->getPost('id_daerah')
+		]);
+		$dataBerkas->move('gambarCafe/', $fileName);
         return redirect()->to('/data');
     }
 
@@ -88,5 +101,13 @@ class DataController extends BaseController
         $_data = $this->request->getPost();
         $this->data->update($id, $_data);
         return redirect()->to('/data');
+    }
+
+    public function cabang()
+    {
+        $_data = [
+            'daerah' => $this->daerah->findAll()
+        ];
+        return view('/Data/cabang', $_data);
     }
 }

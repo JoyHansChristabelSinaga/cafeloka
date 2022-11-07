@@ -61,6 +61,7 @@ $routes->delete('/deleteBooking/(:any)', 'BookingController::deleteBooking/$1');
 $routes->get('/booking', 'BookingController::view');
 
 $routes->get('/tampil/(:any)', 'HalamanCafe::index/$1');
+$routes->get('/cabang', 'DataController::cabang');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

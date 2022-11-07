@@ -107,7 +107,7 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Sedare Perspiciatis</a></h3>
+            <h3><a href="/cabang">Cabang</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
@@ -225,7 +225,7 @@
         <?php foreach ($data as $key => $value) : ?>
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-3" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <img width="150px" class="img-thumbnail" src="<?= base_url() . "/gambarCafe/" . $value->foto; ?>">
               <h4><a href="/tampil/<?= $value->id ?>"><?= $value->nama_cafe ?></a></h4>
               <p style="width:400px ;"><?= $value->alamat ?></p>
             </div>

@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <div class="p-4">
-    <form action="/store" method="POST">
+    <form action="/store" method="POST" enctype="multipart/form-data">
         <div class="form-group mb-3">
             <label for="npm">Nama Cafe</label>
             <input type="text" class="form-control" id="npm" name="nama_cafe">
@@ -23,6 +23,10 @@
                     <option value="<?= $value->id_daerah ?>"> <?= $value->nama_daerah ?> </option>
                 <?php endforeach; ?>
             </select>
+        </div>
+        <div class="mb-3">
+            <label for="foto" class="form-label">foto</label>
+            <input type="file" class="form-control" id="foto" name="foto">
         </div>
         <div class="form-group mb-3">
             <label for="keterangan">Keterangan</label>
