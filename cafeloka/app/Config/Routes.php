@@ -60,7 +60,17 @@ $routes->delete('/deleteBooking/(:any)', 'BookingController::deleteBooking/$1');
 // $routes->get('/index', 'Pages::index');
 $routes->get('/booking', 'BookingController::view');
 
+$routes->get('/data/dataDaerah', 'DaerahController::create');
+$routes->post('/storeDaerah', 'DaerahController::store');
+$routes->get('/editDaerah/(:num)', 'DaerahController::edit/$1');
+$routes->post('/updateDaerah/(:num)', 'DaerahController::update/$1');
+$routes->delete('/deleteDaerah/(:any)', 'DaerahController::delete/$1');
+$routes->get('/indexDaerah', 'Pages::index');
+$routes->get('/daerah', 'DaerahController::view');
+$routes->get('/createDaerah', 'DaerahController::create');
+
 $routes->get('/tampil/(:any)', 'HalamanCafe::index/$1');
+$routes->get('/tampilSetiapCabang/(:any)', 'Cabang::index/$1');
 $routes->get('/cabang', 'DataController::cabang');
 /*
  * --------------------------------------------------------------------

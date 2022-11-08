@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Cafeloka.id</title>
+  <title>Gp Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -119,7 +119,7 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-database-2-line"></i>
-            <h3><a href="">Nemos Enimade</a></h3>
+            <h3><a href="/daerah">Ujicoba</a></h3>
           </div>
         </div>
       </div>
@@ -218,20 +218,48 @@
 
         <div class="section-title">
           <h2>Services</h2>
-          <p>TOP 6 Cafe</p>
+          <p>CAFE LIST</p>
         </div>
 
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
         <div class="row">
-          <?php foreach ($data as $key => $value) : ?>
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-3" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <img width="150px" class="img-thumbnail" src="<?= base_url() . "/gambarCafe/" . $value->foto; ?>">
-                <h4><a href="/tampil/<?= $value->id ?>"><?= $value->nama_cafe ?></a></h4>
-                <p style="width:400px ;"><?= $value->alamat ?></p>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        </div>
+        <div class="card-body">
+		    <div class="table-responsive">
+			<br>
+			<table id="example1" class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Foto</th>
+						<th>Nama cafe</th>
+						<th>Alamat</th>
+						<th>Keterangan</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($data as $key => $value) : ?>
+						<tr>
+							<td>
+								<img src="/gambarCafe/<?= $value->foto; ?>" width="200px" alt="foto" />
+							</td>
+							<td><a href="/tampil/<?= $value->id ?>"><?= $value->nama_cafe ?></a></td>
+							<td><?= $value->alamat ?></td>
+              <td><?= $value->keterangan ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+				</tfoot>
+			</table>
+		</div>
+    </div>
+	</div>
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+      $(document).ready(function () {
+    $('#example1').DataTable({
+    });
+});
+    </script>   
     </section><!-- End Services Section -->
 
     <!-- ======= Cta Section ======= -->
@@ -415,26 +443,26 @@
               <div class="row">
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="bi bi-emoji-smile"></i>
+                    <i class="bi bi-emoji-smile"></i>   
 
-                    <span data-purecounter-start="0" data-purecounter-end="<?= $jumlah_kafe ?>" data-purecounter-duration="2" class="purecounter"></span>
-                    <p><strong>List Cafe</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
+                    <span data-purecounter-start="0" data-purecounter-end="55" data-purecounter-duration="2" class="purecounter"></span>
+                    <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
                   </div>
                 </div>
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-journal-richtext"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="<?= $jumlah_daerah ?>" data-purecounter-duration="2" class="purecounter"></span>
-                    <p><strong>Daerah</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
+                    <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="2" class="purecounter"></span>
+                    <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
                   </div>
                 </div>
 
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-clock"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="<?= $jumlah_booking ?>" data-purecounter-duration="4" class="purecounter"></span>
-                    <p><strong>List Booking Cafe</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
+                    <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="4" class="purecounter"></span>
+                    <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
                   </div>
                 </div>
 
@@ -545,7 +573,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="template/assets/img/team/fakhri.jpg" class="img-fluid" alt="">
+                <img src="template/assets/img/team/edo.jpg" style="height:300px ;" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -554,16 +582,16 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
+                <h4>Edo Laksana W.</h4>
                 <span>Chief Executive Officer</span>
               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="template/assets/img/team/fachru.jpg" class="img-fluid" alt="">
+                <img src="template/assets/img/team/fakhri.jpg" style="height:300px ;" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -572,11 +600,48 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
+                <h4>Muhammad Fakhri</h4>
+                <span>2017051076</span>
               </div>
             </div>
           </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="template/assets/img/team/joiboi.jpg" style="height:300px ;" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Joy Hans Cristabel S.</h4>
+                <span>2017051050</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="template/assets/img/team/rio.jpg" style="height:300px ;" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Riyo Pratama J.</h4>
+                <span>2017051075</span>
+              </div>
+            </div>
+          </div>
+
 
         </div>
 

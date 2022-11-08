@@ -3,8 +3,13 @@
 <div>
     <a href="/create" type="button" class="btn btn-success m-4">Tambah Data</a>
 </div>
-<table class="table">
-    <thead class="p-3">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+        <div class="row">
+        <div class="card-body">
+		    <div class="table-responsive">
+			<br>
+			<table id="example1" class="table table-bordered table-striped">
+            <thead class="p-3">
         <tr>
             <th scope="col">No</th>
             <th scope="col" style="width:10% ;">Nama</th>
@@ -41,6 +46,18 @@
         <?php $no++;
         endforeach; ?>
     </tbody>
-</table>
+				</tfoot>
+			</table>
+		</div>
+    </div>
+	</div>
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+      $(document).ready(function () {
+    $('#example1').DataTable({
+    });
+});
+    </script>  
 
 <?= $this->endSection() ?>

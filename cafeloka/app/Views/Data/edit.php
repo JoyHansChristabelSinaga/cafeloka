@@ -5,7 +5,9 @@
 
     <div class="P-4">
       <div class="row col-6 ms-3 mt-3">
-        <form action="/update/<?= $data->id ?>" method="POST">
+        <form action="/update/<?= $data->id ?>" method="POST" enctype="multipart/form-data">
+
+        <input type="hidden" name="gambarLama" value="<?= $data->foto ?>">
           <div class="form-group mb-3">
             <label for="nama">Nama Cafe</label>
             <input type="text" name="nama_cafe" class="form-control" id="nama_cafe" value="<?= $data->nama_cafe ?>">
@@ -30,6 +32,7 @@
         <div class="mb-3">
             <label for="foto" class="form-label">foto</label>
             <input type="file" class="form-control" id="foto" name="foto">
+            <img src="<?= base_url('gambarCafe/'.$data->foto) ?>" alt="" srcset="">
         </div>
           <div class="form-group mb-3">
             <label for="nohp">Keterangan</label>
