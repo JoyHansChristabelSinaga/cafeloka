@@ -19,7 +19,8 @@ class Home extends BaseController
 	public function index()
 	{
 		$_data = [
-			'dbooking' => $this->data->findAll()
+			'dbooking' => $this->data->findAll(),
+			'count_data' => $this->data->num_rows()
 		];
 		return view('layout/header')
 			. view('vw_home', $_data)
