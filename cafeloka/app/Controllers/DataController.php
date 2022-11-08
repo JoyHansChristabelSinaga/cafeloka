@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Data;
 use App\Models\Daerah;
-
+use App\Models\Booking;
 class DataController extends BaseController
 {
 
@@ -20,10 +20,22 @@ class DataController extends BaseController
     public function index()
     {
         $dataModel = new Data();
+        $dataDaerah= new Daerah();
+        $dataBook = new Booking();
         $data = $dataModel->findAll();
+        $jumlah_kafe = $dataModel->countAllResults();
+        $jumlah_daerah = $dataDaerah->countAllResults();
+        $jumlah_booking = $dataBook->countAllResults();
+        // $builder = $db->table('mytable');
+        // $query   = $data->get();
 
         $_data = [
-            'data' => $data
+            'data' => $data,
+            'jumlah_kafe' => $jumlah_kafe,
+            'jumlah_daerah'=>$jumlah_daerah,
+            'jumlah_booking'=>$jumlah_booking
+            // 'count_data' => $this->data->num_rows()
+
         ];
 
         return view('vw_home', $_data);
@@ -34,7 +46,7 @@ class DataController extends BaseController
         $_data = [
             'data' => $this->daerah->findAll()
         ];
-        return view('data/create',$_data);
+        return view('data/create', $_data);
     }
 
     public function store()
@@ -56,16 +68,16 @@ class DataController extends BaseController
         // return redirect()->to('/data');
 
         $dataBerkas = $this->request->getFile('foto');
-		$fileName = $dataBerkas->getRandomName();
-		$this->data->insert([
+        $fileName = $dataBerkas->getRandomName();
+        $this->data->insert([
             'nama_cafe' => $this->request->getPost('nama_cafe'),
             'manager' => $this->request->getPost('manager'),
             'keterangan' => $this->request->getPost('keterangan'),
-			'foto' => $fileName,
-			'alamat' => $this->request->getPost('alamat'),
+            'foto' => $fileName,
+            'alamat' => $this->request->getPost('alamat'),
             'id_daerah' => $this->request->getPost('id_daerah')
-		]);
-		$dataBerkas->move('gambarCafe/', $fileName);
+        ]);
+        $dataBerkas->move('gambarCafe/', $fileName);
         return redirect()->to('/data');
     }
 
@@ -89,10 +101,10 @@ class DataController extends BaseController
     {
         $data = $this->data->find($id);
 
-        if(is_object($data)){
+        if (is_object($data)) {
             $_data['data'] = $data;
             $_data['daerah'] = $this->daerah->findAll();
-            return view('data/edit',$_data);
+            return view('data/edit', $_data);
         }
     }
 
@@ -102,25 +114,16 @@ class DataController extends BaseController
         // $this->data->update($id, $_data);
 
         $dataBerkas = $this->request->getFile('foto');
-
-        if($dataBerkas->getError() == 4){
-            $fileName = $this->request->getPost('gambarLama');
-        }else{
-            $fileName = $dataBerkas->getRandomName();
-
-            $dataBerkas->move(WRITEPATH . '../public/gambarCafe/', $fileName);
-
-            unlink(WRITEPATH . '../public/gambarCafe/'.$this->request->getPost('gambarLama'));
-        }
-        
-		$this->data->update($id,[
+        $fileName = $dataBerkas->getRandomName();
+        $this->data->update($id, [
             'nama_cafe' => $this->request->getPost('nama_cafe'),
             'manager' => $this->request->getPost('manager'),
             'keterangan' => $this->request->getPost('keterangan'),
-			'foto' => $fileName,
-			'alamat' => $this->request->getPost('alamat'),
+            'foto' => $fileName,
+            'alamat' => $this->request->getPost('alamat'),
             'id_daerah' => $this->request->getPost('id_daerah')
-		]);
+        ]);
+        $dataBerkas->move('gambarCafe/', $fileName);
         return redirect()->to('/data');
     }
 
