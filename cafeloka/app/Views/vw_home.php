@@ -303,12 +303,12 @@
             <!-- End Features Section -->
 
             <!-- ======= Services Section ======= -->
-            <section id="services" class="services">
+            <section id="services" class="services">5
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
                         <h2>Services</h2>
-                        <p>TOP 6 Cafe</p>
+                        <p>List Cafe</p>
                     </div>
                     <link
                         rel="stylesheet"
@@ -662,9 +662,7 @@
                                                 data-purecounter-end="<?= $jumlah_kafe ?>"
                                                 data-purecounter-duration="2"
                                                 class="purecounter"></span>
-                                            <p>
-                                                <strong>List Cafe</strong>
-                                                consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
+                                            <h2><strong>List Cafe</strong></h2>
                                         </div>
                                     </div>
 
@@ -676,9 +674,7 @@
                                                 data-purecounter-end="<?= $jumlah_daerah ?>"
                                                 data-purecounter-duration="2"
                                                 class="purecounter"></span>
-                                            <p>
-                                                <strong>Daerah</strong>
-                                                adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
+                                                <h2><strong>Jumlah Daerah</strong></h2>
                                         </div>
                                     </div>
 
@@ -690,9 +686,7 @@
                                                 data-purecounter-end="<?= $jumlah_booking ?>"
                                                 data-purecounter-duration="4"
                                                 class="purecounter"></span>
-                                            <p>
-                                                <strong>List Booking Cafe</strong>
-                                                aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
+                                                <h2><strong>Jumlah Booking</strong></h2>
                                         </div>
                                     </div>
 
