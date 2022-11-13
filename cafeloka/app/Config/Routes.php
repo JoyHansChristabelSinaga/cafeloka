@@ -60,6 +60,14 @@ $routes->delete('/deleteBooking/(:any)', 'BookingController::deleteBooking/$1');
 // $routes->get('/index', 'Pages::index');
 $routes->get('/booking', 'BookingController::view');
 
+$routes->get('/createBookingUser', 'BookingUserController::createBooking');
+$routes->post('/storeBookingUser', 'BookingUserController::storeBooking');
+$routes->get('/editBookingUser/(:num)', 'BookingUserController::editBooking/$1');
+$routes->post('/updateBookingUser/(:num)', 'BookingUserController::updateBooking/$1');
+$routes->delete('/deleteBookingUser/(:any)', 'BookingUserController::deleteBooking/$1');
+// $routes->get('/index', 'Pages::index');
+$routes->get('/bookingUser', 'BookingUserController::view');
+
 $routes->get('/data/dataDaerah', 'DaerahController::create');
 $routes->post('/storeDaerah', 'DaerahController::store');
 $routes->get('/editDaerah/(:num)', 'DaerahController::edit/$1');
@@ -72,6 +80,10 @@ $routes->get('/createDaerah', 'DaerahController::create');
 $routes->get('/tampil/(:any)', 'HalamanCafe::index/$1');
 $routes->get('/tampilSetiapCabang/(:any)', 'Cabang::index/$1');
 $routes->get('/cabang', 'DataController::cabang');
+
+$routes->get('/admin', 'Admin::index');
+$routes->get('/bookingAdmin', 'Admin::create');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

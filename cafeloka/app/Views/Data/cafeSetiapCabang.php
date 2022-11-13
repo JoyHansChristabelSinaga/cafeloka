@@ -22,22 +22,26 @@
                     </tr>
                 </thead>
                 <?php $no = 1;
-    foreach ($daerah as $key => $value) : ?>
-                <tbody value="<?= $value->id_daerah ?>">
-                    <?php if($data->id_daerah == $value->id_daerah){
-            echo '<td>'.$no++.'</td>:';
-            echo '<td>'.$value->nama_cafe.'</td>:';
-            echo '<td>'.$value->manager.'</td>:';
-            echo '<td>'.$value->alamat.'</td>:';
-            echo '<td>'.$value->keterangan.'</td>:';
-            echo '<td><img width="150px" class="img-thumbnail" src="'.base_url()."/gambarCafe/".$value->foto.'"></td>';
-            echo '<td>
-            <div class="d-flex align-items-start">
-                <a class="btn btn-warning mb-3 ms-2" href="/createBooking"><i class="fa fa-edit"></i>Booking</a>
-            </div>
-        </td>';
-        }?></tbody>
-                <?php endforeach; ?>
+                foreach ($data as $admin) : ?>
+                    <tr>
+                        <th scope="row"><?= $no ?></th>
+                        <td><?= $admin->nama_cafe ?></td>
+                        <td><?= $admin->manager ?></td>
+                        <td><?= $admin->alamat ?></td>
+                        <td><?= $admin->keterangan ?></td>
+                        <td><img width="150px" class="img-thumbnail" src="<?= base_url() . "/gambarCafe/" . $admin->foto; ?>"></td>
+                        <td>
+                            <div class="d-flex align-items-start">
+                                <a class="btn btn-warning mb-3 ms-2" href="/edit/<?= $admin->id ?>"><i class="fa fa-edit"></i> Edit</a>
+                                <form action="/delete/<?= $admin->id ?>" method="post">
+                                    <input type="hidden" name="_method" value="DELETE" />
+                                    <button type="submit" class="btn btn-danger mb-3 ms-2"><i class="fa fa-trash"></i> Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                <?php $no++;
+                endforeach; ?>
             </tfoot>
         </table>
     </div>

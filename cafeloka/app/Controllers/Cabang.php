@@ -16,10 +16,9 @@ class Cabang extends BaseController
 
     public function index($id)
     {
-        $daerah = $this->daerah->find($id);
+        $daerah = $this->data->where('id_daerah',$id)->findAll();
 
         $_data['data'] = $daerah;
-        $_data['daerah'] = $this->data->findAll();
 
         return view('data/cafeSetiapCabang', $_data);
     }

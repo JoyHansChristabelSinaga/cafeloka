@@ -25,4 +25,14 @@ class Home extends BaseController
 			. view('vw_home', $_data)
 			. view('layout/footer');
 	}
+
+	public function admin()
+	{
+		
+		return view('layout/header')
+		. view('admin/admin')
+		. view('layout/footer');
+	}
+
+	
 }

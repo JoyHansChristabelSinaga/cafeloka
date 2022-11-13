@@ -66,7 +66,7 @@ class BookingController extends BaseController
     public function view()
     {
         $_data = [
-            'dbooking' => $this->booking->getAll()
+            'dbooking' => $this->booking->getUsers()
         ];
         // dd($this->booking->getAll());
         return view('booking/booking', $_data);

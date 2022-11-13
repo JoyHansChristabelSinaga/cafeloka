@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\Data;
 use App\Models\Daerah;
 use App\Models\Booking;
+use App\Models\UsersModel;
+
 class DataController extends BaseController
 {
 
@@ -15,27 +17,22 @@ class DataController extends BaseController
     {
         $this->daerah = new Daerah();
         $this->data = new Data();
+        $this->booking = new Booking();
+        $this->user = new UsersModel();
     }
 
     public function index()
     {
-        $dataModel = new Data();
-        $dataDaerah= new Daerah();
-        $dataBook = new Booking();
-        $data = $dataModel->findAll();
-        $jumlah_kafe = $dataModel->countAllResults();
-        $jumlah_daerah = $dataDaerah->countAllResults();
-        $jumlah_booking = $dataBook->countAllResults();
-        // $builder = $db->table('mytable');
-        // $query   = $data->get();
-
+        $jumlah_booking = $this->booking->countAllResults();
+        $jumlah_kafe = $this->data->countAllResults();
+        $jumlah_daerah = $this->daerah->countAllResults();
+        $jumlah_user = $this->user->countAllResults();        
         $_data = [
-            'data' => $data,
-            'jumlah_kafe' => $jumlah_kafe,
-            'jumlah_daerah'=>$jumlah_daerah,
-            'jumlah_booking'=>$jumlah_booking
-            // 'count_data' => $this->data->num_rows()
-
+            'jumlahBooking' => $jumlah_booking,
+            'jumlahCafe' => $jumlah_kafe,
+            'jumlahDaerah' => $jumlah_daerah,
+            'jumlahUser' => $jumlah_user,
+            'data' => $this->booking->getAll()
         ];
 
         return view('vw_home', $_data);
@@ -46,7 +43,7 @@ class DataController extends BaseController
         $_data = [
             'data' => $this->daerah->findAll()
         ];
-        return view('data/create', $_data);
+        return view('data/create',$_data);
     }
 
     public function store()
@@ -68,21 +65,25 @@ class DataController extends BaseController
         // return redirect()->to('/data');
 
         $dataBerkas = $this->request->getFile('foto');
-        $fileName = $dataBerkas->getRandomName();
-        $this->data->insert([
+		$fileName = $dataBerkas->getRandomName();
+		$this->data->insert([
             'nama_cafe' => $this->request->getPost('nama_cafe'),
             'manager' => $this->request->getPost('manager'),
             'keterangan' => $this->request->getPost('keterangan'),
-            'foto' => $fileName,
-            'alamat' => $this->request->getPost('alamat'),
+			'foto' => $fileName,
+			'alamat' => $this->request->getPost('alamat'),
             'id_daerah' => $this->request->getPost('id_daerah')
-        ]);
-        $dataBerkas->move('gambarCafe/', $fileName);
+		]);
+		$dataBerkas->move('gambarCafe/', $fileName);
         return redirect()->to('/data');
     }
 
     public function view()
     {
+        $jumlah_booking = $this->booking->countAllResults();
+        $jumlah_kafe = $this->data->countAllResults();
+        $jumlah_daerah = $this->daerah->countAllResults();
+        $jumlah_user = $this->user->countAllResults();        
         $_data = [
             'data' => $this->data->getAll()
         ];
@@ -101,10 +102,10 @@ class DataController extends BaseController
     {
         $data = $this->data->find($id);
 
-        if (is_object($data)) {
+        if(is_object($data)){
             $_data['data'] = $data;
             $_data['daerah'] = $this->daerah->findAll();
-            return view('data/edit', $_data);
+            return view('data/edit',$_data);
         }
     }
 
@@ -114,16 +115,25 @@ class DataController extends BaseController
         // $this->data->update($id, $_data);
 
         $dataBerkas = $this->request->getFile('foto');
-        $fileName = $dataBerkas->getRandomName();
-        $this->data->update($id, [
+
+        if($dataBerkas->getError() == 4){
+            $fileName = $this->request->getPost('gambarLama');
+        }else{
+            $fileName = $dataBerkas->getRandomName();
+
+            $dataBerkas->move(WRITEPATH . '../public/gambarCafe/', $fileName);
+
+            unlink(WRITEPATH . '../public/gambarCafe/'.$this->request->getPost('gambarLama'));
+        }
+        
+		$this->data->update($id,[
             'nama_cafe' => $this->request->getPost('nama_cafe'),
             'manager' => $this->request->getPost('manager'),
             'keterangan' => $this->request->getPost('keterangan'),
-            'foto' => $fileName,
-            'alamat' => $this->request->getPost('alamat'),
+			'foto' => $fileName,
+			'alamat' => $this->request->getPost('alamat'),
             'id_daerah' => $this->request->getPost('id_daerah')
-        ]);
-        $dataBerkas->move('gambarCafe/', $fileName);
+		]);
         return redirect()->to('/data');
     }
 

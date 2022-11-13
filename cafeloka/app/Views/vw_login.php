@@ -33,11 +33,6 @@
       <form method="post" action="<?= base_url(); ?>/login/process">
       <?= csrf_field(); ?>
 					<h1>Sign in</h1>
-					<div class="social-container">
-						<a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></i></a>
-						<a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
-						<a href="#" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-					</div>
 					<span>or use your account</span>
 					<input type="text" placeholder="Username" name="username" />
 					<input type="password" placeholder="Password" name="password" />

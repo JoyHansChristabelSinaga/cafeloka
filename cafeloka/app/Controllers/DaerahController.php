@@ -28,7 +28,7 @@ class DaerahController extends BaseController
         $_daerah = [
             'daerah' => $this->daerah->findAll()
         ];
-        return view('daerah/create',$_daerah);
+        return view('admin/tambahdaerahAdmin',$_daerah);
     }
 
     public function store()
@@ -53,7 +53,7 @@ class DaerahController extends BaseController
 		]);
 		$daerahBerkas->move('gambarDaerah/', $fileName);
         
-        return redirect()->to('/daerah');
+        return redirect()->to('/bookingAdmin');
     }
 
     public function view()
@@ -69,7 +69,7 @@ class DaerahController extends BaseController
         $daerahModel = new daerah();
         $daerahModel->delete($id);
 
-        return redirect()->to('/daerah');
+        return redirect()->to('admin');
     }
 
     public function edit($id)
@@ -79,7 +79,7 @@ class DaerahController extends BaseController
         if(is_object($daerah)){
             $_daerah['daerah'] = $daerah;
             // $_daerah['daerah'] = $this->daerah->findAll();
-            return view('daerah/edit',$_daerah);
+            return view('admin/editdaerahAdmin',$_daerah);
         }
     }
 
