@@ -93,7 +93,7 @@
             <h3><a href="/cabang">Cabang</a></h3>
           </div>
         </div>
-        <div class="col-xl-2 col-md-4">
+        <!-- <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-paint-brush-line"></i>
             <h3><a href="">Magni Dolores</a></h3>
@@ -104,7 +104,7 @@
             <i class="ri-database-2-line"></i>
             <h3><a href="/daerah">Ujicoba</a></h3>
           </div>
-        </div>
+        </div> -->
       </div>
 
     </div>
@@ -166,82 +166,8 @@
     <section id="features" class="features">
       <div class="container" data-aos="fade-up">
 
-        <div class="row">
-          <div class="image col-lg-6" style='background-image: url("template/assets/img/features.jpg");' data-aos="fade-right"></div>
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-receipt"></i>
-              <h4>Est labore ad</h4>
-              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-cube-alt"></i>
-              <h4>Harum esse qui</h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-images"></i>
-              <h4>Aut occaecati</h4>
-              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-            </div>
-            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-              <i class="bx bx-shield"></i>
-              <h4>Beatae veritatis</h4>
-              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section><!-- End Features Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>PemBooking</p>
-        </div>
-
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-        <div class="row">
-        <div class="card-body">
-		    <div class="table-responsive">
-			<br>
-			<table id="example1" class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th style="width:20% ;">Nama</th>
-						<th>Alamat</th>
-            <th>Cafe</th>
-						<th>Keterangan</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php foreach ($data as $key => $value) : ?>
-						<tr>
-                <td><?= $value->nama ?></td>
-                <td><?= $value->alamat ?></td>
-                <td><?= $value->nama_cafe ?></td>
-                <td><?= $value->deskripsi ?></td>
-						</tr>
-					<?php endforeach; ?>
-				</tbody>
-				</tfoot>
-			</table>
-		</div>
-    </div>
-	</div>
-  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-  <script>
-      $(document).ready(function () {
-    $('#example1').DataTable({
-    });
-});
-    </script>   
-    </section><!-- End Services Section -->
 
     <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
@@ -325,7 +251,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="template/assets/img/team/fachru.jpg" style="height:300px ;" class="img-fluid" alt="">
+                <img src="template/assets/img/team/fakhri.jpg" style="height:300px ;" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -334,11 +260,48 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Muhammad Fachru Syahputra</h4>
+                <h4>Joy</h4>
                 <span>2017051087</span>
               </div>
             </div>
           </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="template/assets/img/team/fakhri.jpg" style="height:300px ;" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>RIYO</h4>
+                <span>2017051087</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="template/assets/img/team/fakhri.jpg" style="height:300px ;" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>EDO</h4>
+                <span>2017051087</span>
+              </div>
+            </div>
+          </div>
+
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Booking;
 use App\Models\Data;
+use App\Models\Meja;
 
 class BookingController extends BaseController
 {
@@ -14,6 +15,7 @@ class BookingController extends BaseController
     {
         $this->booking = new Booking();
         $this->data = new Data();
+        $this->meja = new Meja();
     }
 
     public function index()
@@ -31,7 +33,7 @@ class BookingController extends BaseController
     public function createBooking()
     {
         $_data = [
-            'data' => $this->data->findAll()
+            'kon' => $this->data->findAll(),
         ];
         return view('booking/create', $_data);
     }

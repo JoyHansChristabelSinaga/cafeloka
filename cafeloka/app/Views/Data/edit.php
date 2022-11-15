@@ -32,7 +32,7 @@
         <div class="mb-3">
             <label for="foto" class="form-label">foto</label>
             <input type="file" class="form-control" id="foto" name="foto">
-            <img src="<?= base_url('gambarCafe/'.$data->foto) ?>" alt="" srcset="">
+            <img style="height:200px ;" src="<?= base_url('gambarCafe/'.$data->foto) ?>" alt="" srcset="">
         </div>
           <div class="form-group mb-3">
             <label for="nohp">Keterangan</label>

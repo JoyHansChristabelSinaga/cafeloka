@@ -30,7 +30,8 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form action="/storeDaerah" method="POST" enctype="multipart/form-data">
+                            <form action="/updateDaerah/<?= $daerah->id_daerah ?>" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="gambarLama" value="<?= $daerah->gambar ?>">
                                 <div class="form-group mb-3">
                                     <label for="npm">Nama Daerah</label>
                                     <input
@@ -41,7 +42,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="foto" class="form-label">foto</label>
-                                    <input type="file" class="form-control" id="foto" name="foto">
+                                    <input type="file" class="form-control" id="gambar" name="gambar">
                                     <img src="<?= base_url('gambarDaerah/'.$daerah->gambar) ?>" alt="" srcset="">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>

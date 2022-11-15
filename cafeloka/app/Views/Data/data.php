@@ -16,7 +16,7 @@
             <th scope="col">Manager</th>
             <th scope="col" style="width:10% ;">Alamat</th>
             <th scope="col">Daerah</th>
-            <th scope="col" style="width:30% ;">Keterangan</th>
+            <th scope="col">Kursi</th>
             <th scope="col" style="width:20% ;">Foto</th>
 
             <th scope="col">Aksi</th>
@@ -31,7 +31,7 @@
                 <td><?= $admin->manager ?></td>
                 <td><?= $admin->alamat ?></td>
                 <td><?= $admin->nama_daerah ?></td>
-                <td><?= $admin->keterangan ?></td>
+                <td><?= $admin->jumlah_kursi?></td>
                 <td><img width="150px" class="img-thumbnail" src="<?= base_url() . "/gambarCafe/" . $admin->foto; ?>"></td>
                 <td>
                     <div class="d-flex align-items-start">

@@ -29,7 +29,8 @@ class Admin extends BaseController
             'jumlahCafe' => $jumlah_kafe,
             'jumlahDaerah' => $jumlah_daerah,
             'jumlahUser' => $jumlah_user,
-            'daerah' => $this->daerah->findAll()
+            'daerah' => $this->daerah->findAll(),
+            'data' => $this->booking->getAll()
         ];
         return view('layout/header')
 		. view('admin/admin', $_daerah)

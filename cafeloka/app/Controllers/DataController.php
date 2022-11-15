@@ -85,7 +85,7 @@ class DataController extends BaseController
         $jumlah_daerah = $this->daerah->countAllResults();
         $jumlah_user = $this->user->countAllResults();        
         $_data = [
-            'data' => $this->data->getAll()
+            'data' => $this->data->getAll(),
         ];
         return view('Data/data', $_data);
     }

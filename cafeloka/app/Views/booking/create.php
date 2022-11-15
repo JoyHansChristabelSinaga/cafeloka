@@ -44,6 +44,19 @@
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+            <div class="icon-box mt-3" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="form-group">
+                        <label for="">Meja</label>
+                        <select name="id_meja" id="" class="form-control mt-1" required="required">
+                            <option value="" hidden="hidden"></option>
+                            <?php foreach ($meja as $key => $value) : ?>
+                            <option value="<?= $value->id_meja ?>">
+                                <?= $value->jenis_meja ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
                     <div class="form-group">
                         <label for="npm">deskripsi</label>

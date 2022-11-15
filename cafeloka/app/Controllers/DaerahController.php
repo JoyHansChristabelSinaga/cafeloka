@@ -88,14 +88,14 @@ class DaerahController extends BaseController
         // $_daerah = $this->request->getPost();
         // $this->daerah->update($id, $_daerah);
 
-        $daerahBerkas = $this->request->getFile('gambar');
+        $dataBerkas = $this->request->getFile('gambar');
 
-        if($daerahBerkas->getError() == 4){
+        if($dataBerkas->getError() == 4){
             $fileName = $this->request->getPost('gambarLama');
         }else{
-            $fileName = $daerahBerkas->getRandomName();
+            $fileName = $dataBerkas->getRandomName();
 
-            $daerahBerkas->move(WRITEPATH . '../public/gambarDaerah/', $fileName);
+            $dataBerkas->move(WRITEPATH . '../public/gambarDaerah/', $fileName);
 
             unlink(WRITEPATH . '../public/gambarDaerah/'.$this->request->getPost('gambarLama'));
         }
@@ -104,6 +104,6 @@ class DaerahController extends BaseController
             'nama_daerah' => $this->request->getPost('nama_daerah'),
 			'gambar' => $fileName,
 		]);
-        return redirect()->to('/daerah');
+        return redirect()->to('/admin');
     }
 }

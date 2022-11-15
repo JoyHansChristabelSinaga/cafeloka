@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Booking;
 use App\Models\Data;
+use App\Models\Meja;
+use CodeIgniter\Entity\Cast\IntegerCast;
 
 class BookingUserController extends BaseController
 {
@@ -13,6 +15,7 @@ class BookingUserController extends BaseController
         {
             $this->booking = new Booking();
             $this->data = new Data();
+            $this->meja = new Meja();
         }
     
         public function index()
@@ -30,7 +33,8 @@ class BookingUserController extends BaseController
         public function createBooking()
         {
             $_data = [
-                'data' => $this->data->findAll()
+                'data' => $this->data->findAll(),
+                'meja' => $this->meja->findAll(),
             ];
             return view('booking/create', $_data);
         }
@@ -46,21 +50,58 @@ class BookingUserController extends BaseController
             ])) {
                 return redirect()->to('/createBooking');
             }
-            // $dataModel = new Booking();
+
+            $meja = $this->meja;
+
+
+            // $dataModel =  $this->booking;
             // $_data = [
             //     'nama' => $this->request->getPost('nama'),
             //     'alamat' => $this->request->getPost('alamat'),
             //     'kontak' => $this->request->getPost('kontak'),
-            //     'nama_cafe' => $this->request->getPost('nama_cafe'),
+            //     'id_data' => $this->request->getPost('id_data'),
+            //     'id_meja' => $this->request->getPost('id_meja'),
             //     'deskripsi' => $this->request->getPost('deskripsi'),
+            //     'username' => $this->request->getPost('username'),
             // ];
+
+            // $dataKursi = $this->request->getPost('id_data');
+            // $dataMeja = $this->request->getPost('id_meja');
+            // $this->decreaseBook($dataKursi, $dataMeja);
+
+            // $builder = $this->meja->select('SELECT SUM(meja.jumlah_kursi) as kursi 
+            // FROM meja 
+            // INNER JOIN booking ON booking.id_meja=meja.id_meja');
+
+            $builder = $this->meja;
+            $builder->selectSum("meja.jumlah_kursi")->join("booking", "booking.id_meja = meja.id_meja");
+            $query =  $builder->get();
+
+            $dataCafe = $this->data->where('id', $this->request->getPost('id_data'))->first();
+            $_data = [
+                'jumlah_kursi' =>  $dataCafe->jumlah_kursi - 1
+            ];
+
     
             $data = $this->request->getPost();
             $this->booking->insert($data);
-            // $dataModel->save($_data);
+            $this->data->update($_data);
+            // $dataModel->insert($_data);
     
             return redirect()->to('booking');
         }
+
+        // public function decreaseBook($idBuku, $buku)
+        // {
+        //     $modelBuku = new modelBuku();
+    
+        //     $data = [
+        //         'jumlah' => $buku['jumlah'] - 1
+        //     ];
+    
+        //     $modelBuku->update($idBuku, $data);
+        // }
+        
     
         public function view()
         {

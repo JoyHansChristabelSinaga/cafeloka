@@ -83,7 +83,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List Cafe</h4>
+                            <h4>List Cabang</h4>
                         </div>
                         <div class="card-body">
                             <div class="container">
@@ -96,8 +96,7 @@
                                                         <tr>
                                                             <th scope="col">No</th>
                                                             <th scope="col">Nama Daerah</th>
-                                                            <th scope="col">Foto</th>
-                                                            <th scope="col">Aksi</th>
+                                                            <th scope="col">Foto</th
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -110,19 +109,6 @@
                                                                 width="150px"
                                                                 class="img-thumbnail"
                                                                 src="<?= base_url() . "/gambarDaerah/" . $admin->gambar; ?>"></td>
-                                                            <td>
-                                                                <div class="d-flex align-items-center">
-                                                                    <a class="btn btn-warning mb-3 ms-2" href="/editDaerah/<?= $admin->id_daerah ?>">
-                                                                        <i class="fa fa-edit"></i>
-                                                                        Edit</a>
-                                                                    <form action="/deleteDaerah/<?= $admin->id_daerah ?>" method="post">
-                                                                        <input type="hidden" name="_method" value="DELETE"/>
-                                                                        <button type="submit" class="btn btn-danger mb-3 ms-2">
-                                                                            <i class="fa fa-trash"></i>
-                                                                            Delete</button>
-                                                                    </form>
-                                                                </div>
-                                                            </td>
                                                         </tr>
                                                         <?php $no++;
                                                         endforeach; ?>
@@ -134,6 +120,52 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>List Booking</h4>
+                        </div>
+                        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+        <div class="row">
+        <div class="card-body">
+		    <div class="table-responsive">
+			<br>
+			<table id="example1" class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th style="width:20% ;">Nama</th>
+						<th>Alamat</th>
+            <th>Cafe</th>
+						<th>Keterangan</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($data as $key => $value) : ?>
+						<tr>
+                <td><?= $value->nama ?></td>
+                <td><?= $value->alamat ?></td>
+                <td><?= $value->nama_cafe ?></td>
+                <td><?= $value->deskripsi ?></td>
+						</tr>
+					<?php endforeach; ?>
+				</tbody>
+				</tfoot>
+			</table>
+		</div>
+    </div>
+	</div>
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+      $(document).ready(function () {
+    $('#example1').DataTable({
+    });
+});
+    </script>  
                     </div>
                 </div>
             </div>
