@@ -24,6 +24,7 @@
   <link href="/template/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="/template/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="/template/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- /Template Main CSS File -->
   <link href="/template/assets/css/style.css" rel="stylesheet">
@@ -47,7 +48,7 @@
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="/template/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
-      <ul>
+        <ul>
           <li><a class="nav-link scrollto active" href="/home">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
@@ -81,7 +82,7 @@
 
     <section class="inner-page">
       <div class="container">
-      <?= $this->renderSection('content') ?>
+        <?= $this->renderSection('content') ?>
       </div>
     </section>
 

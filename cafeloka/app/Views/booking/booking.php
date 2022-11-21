@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
 
 <div>
-    <a href="/createBookingUser" type="button" class="btn btn-success m-4">Tambah Data</a>
+    <a href="/createBookingUser" type="button" class="btn btn-success m-4"><i class="fa fa-plus"></i> Tambah Data</a>
 </div>
 <table class="table">
     <thead class="p-3">

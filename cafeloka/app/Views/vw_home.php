@@ -121,20 +121,16 @@
             <img src="template/assets/img/lambangCafe.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <h1>CAFELOKA</h1>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Kafe adalah tempat untuk makan dan minum sajian cepat saji dan menyuguhkan suasanan santai atau tidak resmi, selain itu juga merupakan suatu tipe dari restoran yang biasanya menyediakan tempat duduk didalam dan diluar restoran.
+              Dengan adanya layanan seperti Cafeloka dapat mempermudah para pegunjung untuk membooking tempat cafe tanpa ke lokasinya.
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="ri-check-double-line"></i> Tidak mengeluarkan biaya dan energi.</li>
+              <li><i class="ri-check-double-line"></i> Dapat di akses oleh khalayak umum (Semua Usia)</li>
+              <li><i class="ri-check-double-line"></i> Dapat melihat dan memilih tempat cafe yang sesuai keinginan tanpa ke lokasi.</li>
             </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-            </p>
           </div>
         </div>
 
@@ -199,7 +195,7 @@
               <div class="row">
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
-                    <i class="bi bi-emoji-smile"></i>   
+                    <i class="bi bi-emoji-smile"></i>
 
                     <span data-purecounter-start="0" data-purecounter-end="<?= $jumlahCafe ?>" data-purecounter-duration="2" class="purecounter"></span>
                     <p><strong>Jumlah Cafe</strong></p>
