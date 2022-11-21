@@ -26,7 +26,12 @@ class Login extends BaseController
                     'name' => $dataUser->name,
                     'logged_in' => TRUE
                 ]);
-                return redirect()->to(base_url('home'));
+                if (session()->get('username') == 'admin'){
+                    return redirect()->to(base_url('admin'));
+                } else {
+                    return redirect()->to(base_url('home'));
+                }
+                
             } else {
                 session()->setFlashdata('error', 'Username & Password Salah');
                 return redirect()->back();
