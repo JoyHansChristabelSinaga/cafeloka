@@ -59,6 +59,13 @@
                         </li>
 
                         <li class="sidebar-item  ">
+                            <a href="/data" class='sidebar-link'>
+                                <i class="bi bi-grid-1x2-fill"></i>
+                                <span>Data Cafe</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  ">
                             <a href="/bookingAdmin" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span>Data Cabang</span>
@@ -77,7 +84,7 @@
                         </li> -->
 
                         <li class="sidebar-item  ">
-                            <a href="/home" class='sidebar-link'>
+                            <a href="/logout" class='sidebar-link'>
                                 <i class="bi bi-grid-1x2-fill"></i>
                                 <span>Logout</span>
                             </a>

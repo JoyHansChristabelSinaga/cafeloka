@@ -89,6 +89,17 @@ class DataController extends BaseController
         ];
         return view('Data/data', $_data);
     }
+    public function view_user()
+    {
+        $jumlah_booking = $this->booking->countAllResults();
+        $jumlah_kafe = $this->data->countAllResults();
+        $jumlah_daerah = $this->daerah->countAllResults();
+        $jumlah_user = $this->user->countAllResults();        
+        $_data = [
+            'data' => $this->data->getAll(),
+        ];
+        return view('Data/data_user', $_data);
+    }
 
     public function delete($id)
     {
@@ -143,5 +154,13 @@ class DataController extends BaseController
             'daerah' => $this->daerah->findAll()
         ];
         return view('/Data/cabang', $_data);
+    }
+
+    public function cabang_user()
+    {
+        $_data = [
+            'daerah' => $this->daerah->findAll()
+        ];
+        return view('/Data/cabang_user', $_data);
     }
 }

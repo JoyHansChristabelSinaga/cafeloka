@@ -51,6 +51,7 @@ $routes->post('/update/(:num)', 'DataController::update/$1');
 $routes->delete('/delete/(:any)', 'DataController::delete/$1');
 $routes->get('/index', 'Pages::index');
 $routes->get('/data', 'DataController::view');
+$routes->get('/data_user', 'DataController::view_user');
 $routes->get('/create', 'DataController::create');
 
 $routes->get('/createBooking', 'BookingController::createBooking');
@@ -80,7 +81,9 @@ $routes->get('/createDaerah', 'DaerahController::create');
 
 $routes->get('/tampil/(:any)', 'HalamanCafe::index/$1');
 $routes->get('/tampilSetiapCabang/(:any)', 'Cabang::index/$1');
+$routes->get('/tampilSetiapCabang_user/(:any)', 'Cabang::index2/$1');
 $routes->get('/cabang', 'DataController::cabang');
+$routes->get('/cabang_user', 'DataController::cabang_user');
 
 $routes->get('/admin', 'Admin::index');
 $routes->get('/bookingAdmin', 'Admin::create');

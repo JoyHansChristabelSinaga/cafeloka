@@ -84,13 +84,13 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="/data">Data Cafe</a></h3>
+            <h3><a href="/data_user">Data Cafe</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-calendar-todo-line"></i>
-            <h3><a href="/cabang">Cabang</a></h3>
+            <h3><a href="/cabang_user">Cabang</a></h3>
           </div>
         </div>
         <!-- <div class="col-xl-2 col-md-4">

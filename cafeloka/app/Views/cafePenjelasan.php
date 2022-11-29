@@ -128,7 +128,7 @@
                 </nav>
                 <!-- .navbar -->
 
-                <a href="#about" class="get-started-btn scrollto">Get Started</a>
+                <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
 
             </div>
         </header>

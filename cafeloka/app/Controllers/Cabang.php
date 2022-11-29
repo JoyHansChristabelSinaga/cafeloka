@@ -22,4 +22,13 @@ class Cabang extends BaseController
 
         return view('data/cafeSetiapCabang', $_data);
     }
+    
+    public function index2($id)
+    {
+        $daerah = $this->data->where('id_daerah',$id)->findAll();
+
+        $_data['data'] = $daerah;
+
+        return view('data/cafeSetiapCabang_user', $_data);
+    }
 }
